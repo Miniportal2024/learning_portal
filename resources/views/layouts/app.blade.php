@@ -130,7 +130,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index">
-                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                        <img src="{{asset('images/Banner.png')}}" style="width:250px; height: 50px; border-radius: 10px;" class="logo" alt="Logo">
                     </a>
                 </div>
                 <!-- End Header Navigation -->

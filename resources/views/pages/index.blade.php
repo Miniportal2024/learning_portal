@@ -136,7 +136,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light carousel-zoom">
                 <div class="item active">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/img/banner/2.jpg);"></div>
+                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/img/banner/home.png);"></div>
                     <div class="box-table shadow dark">
                         <div class="box-cell">
                             <div class="container">
