@@ -24,6 +24,7 @@ Route::get('/teacher-details', function () {return view('pages.teacher-details')
 Route::get('/index-onepage', function () {return view('pages.index-onepage');});
 Route::get('/event', function () {return view('pages.event');});
 Route::get('/gallery', function () {return view('pages.gallery');});
+Route::get('/about-us', function () {return view('pages.about-us');});
 
 //INSTRUCTOR AND ADMIN DASHBOARD
 Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard-index');
