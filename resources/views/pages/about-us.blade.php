@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-6 info">
                         <h5>Introduction</h5>
-                        <h2>Welcome to the beigest online learning source of Eduka</h2>
+                        <h2>Welcome to Virtual Learning Portal</h2>
                         <p>
                             Alteration literature to or an sympathize mr imprudence. Of is ferrars subject as enjoyed or tedious cottage. Procuring as in resembled by in agreeable. Next long no gave mr eyes. Admiration advantages no he celebrated so pianoforte unreserved. Not its herself forming charmed amiable. Him why feebly expect future now. 
                         </p>
