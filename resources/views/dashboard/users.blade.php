@@ -30,7 +30,7 @@
                                             <th></th>
                                             <th>Role</th>
                                             <th>Name</th>
-                                            <th>Id-Number</th>
+                                            <th>ID Number</th>
                                             <th>E-mail</th>
                                             <th>Created_at</th>
                                             <th>Update_at</th>
@@ -310,23 +310,21 @@
                 dataType: 'json',
                 success: function(response) {
                     $('#datatable').html('');
-                    console.log(response);
                     response.forEach(user => {
                         user.roles.forEach(role => {
-                            console.log(role)
                         const row = document.createElement('tr');
                         row.innerHTML = `
                             <td><img class="rounded-circle" width="35" src="{{asset('images/profile/pic1.png')}}" alt=""></td>
                             <td>${role.name}</td>
                             <td>${user.name}</td>
-                            <td>${user['id-number']}</td>
+                            <td>${user['id_number']}</td>
                             <td>${user.email}</td>
                             <td>${user.created_at}</td>
                             <td>${user.updated_at}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="javascript:void(0)" onclick="edit(${user['id']})" id="${user['id']}" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".bd-update-modal-lg"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="javascript:void(0)" onclick="edit(${user['id']})" id="${user['id']}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                    <a href="javascript:void(0)" onclick="edit_user(${user.id})" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".bd-update-modal-lg"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="javascript:void(0)" onclick="delete_user(${user.id})" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                 </div>												
                             </td>
                         `;
@@ -344,18 +342,16 @@
 
 
         // edit user
-        const edit = (id) =>{
+        const edit_user = (id) =>{
             $('#edit_modal').modal('show');
             $.ajax({
                 url: '/dashboard/edit/' + id,
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
-                    console.log(response)
-                    console.log(response.roles[0].name)
                     $('#edit_name').val(response.name)
                     $('#edit_email').val(response.email)
-                    $('#edit_id_number').val(response['id-number'])
+                    $('#edit_id_number').val(response['id_number'])
                     $('#edit_role').val(response.roles[0].name)
                     $('#user_id').val(response.id)
                 },
@@ -367,7 +363,7 @@
 
 
         // update user
-        $('#updateUser').click(function() {
+        $('#update_user').click(function() {
             clearErrorMessages()
             var postData = {
                 name: $('#edit_name').val(),
@@ -386,7 +382,6 @@
                     'X-CSRF-TOKEN': csrfToken
                 },
                 success: function(response) {
-                    console.log(response)
                     if(response.success) {
                         clearInput()
                         $('#edit_success_alert').css('display', 'block');
@@ -411,40 +406,40 @@
 
 
         // delete user
-        // const deleteUser = (id) => {
-        //     var csrfToken = $('meta[name="csrf-token"]').attr('content');
-        //     Swal.fire({
-        //         title: "Are you sure to delete ?",
-        //         text: "You won't be able to revert this!",
-        //         icon: "warning",
-        //         showCancelButton: true,
-        //         confirmButtonColor: "#3085d6",
-        //         cancelButtonColor: "#d33",
-        //         confirmButtonText: "Yes, delete it!"
-        //         }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             $.ajax({
-        //                 url: '',
-        //                 type: 'DELETE',
-        //                 data: { id: id },
-        //                 headers: {
-        //                     'X-CSRF-TOKEN': csrfToken
-        //                 },
-        //                 success: function(response) {
-        //                     if(response.success) {
-        //                          $("#datatable").html('')
-        //                          displayUser()
-        //                     }
-        //                 },
-        //                 error: function(xhr, status, error) {
-        //                     console.error('Request failed:', error);
+        const delete_user = (id) => {
+            var csrfToken = $('meta[name="csrf-token"]').attr('content');
+            Swal.fire({
+                title: "Are you sure to delete ?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: '/dashboard/user-delete',
+                        type: 'DELETE',
+                        data: { id: id },
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        success: function(response) {
+                            if(response.success) {
+                                 $("#datatable").html('')
+                                 displayUser()
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Request failed:', error);
 
-        //                 }
-        //             });
-        //         }
-        //     });
+                        }
+                    });
+                }
+            });
 
-        // };
+        };
 
 
     </script>

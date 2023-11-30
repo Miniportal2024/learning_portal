@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="id-number" class="col-md-4 col-form-label text-md-end">{{ __('id-number') }}</label>
+                            <label for="id_number" class="col-md-4 col-form-label text-md-end">{{ __('id_number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="id-number" type="id-number" class="form-control @error('id-number') is-invalid @enderror" name="id-number" value="{{ old('id-number') }}" required autocomplete="id-number">
+                                <input id="id_number" type="id_number" class="form-control @error('id_number') is-invalid @enderror" name="id_number" value="{{ old('id_number') }}" required autocomplete="id_number">
 
-                                @error('id-number')
+                                @error('id_number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

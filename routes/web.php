@@ -40,7 +40,8 @@ Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert')
 Route::get('/dashboard/users', [UserController::class, 'index']);   
 Route::get('/dashboard/edit/{id}', [UserController::class, 'edit']);   
 Route::get('/dashboard/user-display', [UserController::class, 'display']);  
-Route::post('/dashboard/user-update', [UserController::class, 'update']);    
+Route::put('/dashboard/user-update', [UserController::class, 'update']);    
+Route::delete('/dashboard/user-delete', [UserController::class, 'delete']);     
 Route::post('/dashboard/user-save', [UserController::class, 'save']);    
 
 Auth::routes();
