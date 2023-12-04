@@ -145,6 +145,7 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">Reach you career</h3>
                                             <h1 data-animation="animated slideInUp">Learn from best online training course</h1>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/about-us">Lear More</a>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
