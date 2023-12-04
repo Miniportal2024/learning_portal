@@ -145,7 +145,6 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">Reach you career</h3>
                                             <h1 data-animation="animated slideInUp">Learn from best online training course</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="/about-us">Learn more</a>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
@@ -164,7 +163,6 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">We're glade to see you</h3>
                                             <h1 data-animation="animated slideInUp">explore our brilliant graduates</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#">Learn more</a>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">View Courses</a>
                                         </div>
                                     </div>
@@ -183,7 +181,6 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">The goal of education</h3>
                                             <h1 data-animation="animated slideInUp">Join the bigest comunity of eduka</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#">Learn more</a>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">View Courses</a>
                                         </div>
                                     </div>
@@ -222,11 +219,10 @@
                         <h5>Introduction</h5>
                         <h2>Welcome to Virtual Learning Portal</h2>
                         <p>
-                            Alteration literature to or an sympathize mr imprudence. Of is ferrars subject as enjoyed or tedious cottage. Procuring as in resembled by in agreeable. Next long no gave mr eyes. Admiration advantages no he celebrated so pianoforte unreserved. Not its herself forming charmed amiable. Him why feebly expect future now. 
+                            Step into a realm of industry certifications where learning knows no bounds. In today's fast-paced and ever-evolving professional landscape, staying ahead requires more than just traditional learning methods. This innovative platform is designed to offer a comprehensive array of industry certifications, providing you with the tools and resources to thrive in your field.
                         </p>
                         <p>
-                            Curiosity incommode now led smallness allowance. Favour bed assure son things yet. She consisted consulted elsewhere happiness disposing household any old the. Widow downs. Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one share. No abroad in easily relied an whence lovers temper by.
-                        </p>
+                        Explore a diverse range of certification programs curated to meet the dynamic needs of various industries. Whether you aspire to advance your skills in technology, or other sectors, this platform offers a comprehensive repository of learning resources. Engage in tailored courses, acquire specialized knowledge, and earn certifications that signify your expertise. Join us on this enriching journey of continuous learning and skill enhancement, empowering you to stand out and excel in your chosen profession.</p>
                         <a href="#" class="btn btn-dark border btn-md">Read More</a>
                     </div>
                 </div>
@@ -241,7 +237,7 @@
                             </div>
                             <div class="info">
                                 <h4>Expert faculty</h4>
-                                <a href="#">Read More</a>
+                                <a href="#"></a>
                             </div>
                         </div>
                     </div>
@@ -252,7 +248,7 @@
                             </div>
                             <div class="info">
                                 <h4>Online learning</h4>
-                                <a href="#">Read More</a>
+                                <a href="#"></a>
                             </div>
                         </div>
                     </div>
@@ -263,7 +259,7 @@
                             </div>
                             <div class="info">
                                 <h4>Scholarship</h4>
-                                <a href="#">Read More</a>
+                                <a href="#"></a>
                             </div>
                         </div>
                     </div>

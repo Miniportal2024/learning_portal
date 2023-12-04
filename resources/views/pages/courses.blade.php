@@ -35,7 +35,7 @@
                                 <a href="courses-details">
                                     <img src="assets/img/courses/1.jpg" alt="Thumb">
                                 </a>
-                                <div class="price">Price: Free</div>
+                                <div class="price">AWS</div>
                             </div>
                             <div class="info">
                                 <div class="author-info">
@@ -54,20 +54,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h4><a href="courses-details">data science and software</a></h4>
+                                <h4><a href="courses-details">Amazon web service is an online platform</a></h4>
                                 <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                    Provides scalable and cost-effective cloud computing solutions.
                                 </p>
                                 <div class="bottom-info">
                                     <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
+                                       
                                     </ul>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="#">Start Here</a>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +73,7 @@
                                 <a href="courses-details">
                                     <img src="assets/img/courses/2.jpg" alt="Thumb">
                                 </a>
-                                <div class="price">Price: $12</div>
+                                <div class="price">SC-900 Microsoft Security</div>
                             </div>
                             <div class="info">
                                 <div class="author-info">
@@ -103,14 +98,9 @@
                                 </p>
                                 <div class="bottom-info">
                                     <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
+                                        
                                     </ul>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="#">Start Here</a>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +111,7 @@
                                 <a href="courses-details">
                                     <img src="assets/img/courses/3.jpg" alt="Thumb">
                                 </a>
-                                <div class="price">Price: Free</div>
+                                <div class="price">CompTIA Cyber Security+</div>
                             </div>
                             <div class="info">
                                 <div class="author-info">
@@ -146,14 +136,9 @@
                                 </p>
                                 <div class="bottom-info">
                                     <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
+                                        
                                     </ul>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="#">Start Here</a>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +149,7 @@
                                 <a href="courses-details">
                                     <img src="assets/img/courses/4.jpg" alt="Thumb">
                                 </a>
-                                <div class="price">Price: $46</div>
+                                <div class="price">Mechatronics and Automation Master Technician</div>
                             </div>
                             <div class="info">
                                 <div class="author-info">
@@ -189,14 +174,9 @@
                                 </p>
                                 <div class="bottom-info">
                                     <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
+                                        
                                     </ul>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="#">Start Here</a>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +187,7 @@
                                 <a href="courses-details">
                                     <img src="assets/img/courses/5.jpg" alt="Thumb">
                                 </a>
-                                <div class="price">Price: $124</div>
+                                <div class="price">Mechatronics and Automation Technician</div>
                             </div>
                             <div class="info">
                                 <div class="author-info">
@@ -232,14 +212,9 @@
                                 </p>
                                 <div class="bottom-info">
                                     <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
+                                        
                                     </ul>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="#">Start Here</a>
                                 </div>
                             </div>
                         </div>
