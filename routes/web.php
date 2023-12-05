@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +16,9 @@ use App\Http\Controllers\UserController;
 */
 Route::get('/', function () {return view('pages.index');});
 Route::get('/index', function () {return view('pages.index');})->name('index');
-Route::get('/courses', function () {return view('pages.courses');});
+Route::get('/courses', [CourseController::class, 'display'])->name('courses');
 Route::get('/courses-2', function () {return view('pages.courses-2');});
-Route::get('/courses-details', function () {return view('pages.course-details');})->name('course-details');
+Route::get('/courses-details', [CourseController::class, 'select'])->name('course-details');
 Route::get('/course-video', function () {return view('pages.course-video');});
 Route::get('/teachers', function () {return view('pages.teachers');});
 Route::get('/teacher-details', function () {return view('pages.teacher-details');});

@@ -19,7 +19,7 @@ class CourseSeeder extends Seeder
 
 
         Course::create(['name' => 'SC-900 Microsoft Security', 'overview' => 'Microsoft certifications highlight the skills needed to work efficiently in a job role rather than giving bleary attention to each principle.', 'description' => 'This course category starts by exploring Security, Compliance, and Identity, covering security methodologies, Microsoft Security principles, and compliance concepts, including zero trust methodology, shared responsibility model, and defence in depth strategies.',
-         'state' => true, 'number_of_videos' => 10, 'number_of_files' => 2, 'duration' => '20:15', 'instructor' => 'Johnny sins', 'img' => 'assests/img/courses/2.jpg', 'file' => '', 'rating' => '5']);
+         'state' => true, 'number_of_videos' => 10, 'number_of_files' => 2, 'duration' => '20:15', 'instructor' => 'Johnny sins', 'img' => 'assets/img/courses/2.jpg', 'file' => '', 'rating' => '5']);
 
 
         Course::create(['name' => 'Comptia Cyber Security+', 'overview' => 'A global certification that validates the baseline skills necessary to perform core security functions and pursue an IT security career.', 'description' => 'This course category provides comprehensive training on cybersecurity essentials, covering topics such as threat actors, risk management, cryptography, network security and many more, equipping individuals with crucial skills for protecting digital assets and networks.',
