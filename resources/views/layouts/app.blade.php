@@ -120,6 +120,7 @@
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+                        <li class="login"><a href="{{route('login')}}"><i class="fa fa-sign-in">Login</i></a></li>
                     </ul>
                 </div>        
                 <!-- End Atribute Navigation -->
@@ -139,35 +140,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Home</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Multipage</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index">Home Version One</a></li>
-                                        <li><a href="index-2">Home Version Two</a></li>
-                                        <li><a href="index-3">Home Version Three</a></li>
-                                        <li><a href="index-4">Home Version Four</a></li>
-                                        <li><a href="index-5">Home Version Five</a></li>
-                                        <li><a href="index-6">Home Version Six</a></li>
-                                        <li><a href="index-7">Home Version Serven</a></li>
-                                        <li><a href="index-8">Home Version Eight</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Onepage</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index-onepage">Home Version One</a></li>
-                                        <li><a href="index-2-onepage">Home Version Two</a></li>
-                                        <li><a href="index-3-onepage">Home Version Three</a></li>
-                                        <li><a href="index-4-onepage">Home Version Four</a></li>
-                                        <li><a href="index-5-onepage">Home Version Five</a></li>
-                                        <li><a href="index-6-onepage">Home Version Six</a></li>
-                                        <li><a href="index-7-onepage">Home Version Seven</a></li>
-                                        <li><a href="index-8-onepage">Home Version Eight</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a href="{{route('index')}}" class="active">Home</a>
                         </li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -226,29 +199,26 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Courses</a>
                             <ul class="dropdown-menu">
-                                <li><a href="courses">Courses Carousel One</a></li>
-                                <li><a href="courses-2">Courses Grid One</a></li>
-                                <li><a href="courses-3">Courses Grid Two</a></li>
-                                <li><a href="courses-4">Courses Carousel Two</a></li>
-                                <li><a href="courses-details">Course Details</a></li>
+                                <li><a href="courses">New Courses</a></li>
+                                <li><a href="courses-2">Old Courses</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Teachers</a>
                             <ul class="dropdown-menu">
                                 <li><a href="teachers">Advisor</a></li>
                                 <li><a href="teachers-details">Advisor Details</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
+                        </li> -->
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Event</a>
                             <ul class="dropdown-menu">
                                 <li><a href="event">Event Mixed Colum</a></li>
                                 <li><a href="event-2">Event Grid Colum</a></li>
                                 <li><a href="event-3">Event Carousel</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
+                        </li> -->
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>
                             <ul class="dropdown-menu">
                                 <li><a href="blog-standard">Blog Standard</a></li>
@@ -258,9 +228,9 @@
                                 <li><a href="blog-single-left-sidebar">Single Left Sidebar</a></li>
                                 <li><a href="blog-single-right-sidebar">Single Right Sidebar</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="contact">contact</a>
+                            <a href="{{route('about-us')}}">About-Us</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -310,6 +280,114 @@
     </header>
     @yield('content')
 
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="bg-dark default-padding-top text-light">
+        <div class="container">
+            <div class="row">
+                <div class="f-items">
+                    <div class="col-md-4 item">
+                        <div class="f-item">
+                            <img src="{{asset('images/Banner.png')}}" alt="Logo">
+                            <p>
+                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Had arose guest visit going off child she new.
+                            </p>
+                            <p class="text-italic">
+                                Please write your email and get our amazing updates, news and support
+                            </p>
+                            <div class="subscribe">
+                                <form action="#">
+                                    <div class="input-group stylish-input-group">
+                                        <input type="email" placeholder="Enter your e-mail here" class="form-control" name="email">
+                                        <button type="submit">
+                                            <i class="fa fa-paper-plane"></i>
+                                        </button>  
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 item">
+                        <div class="f-item link">
+                            <h4>Links</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#">Event</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">Faqs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Teachers</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 item">
+                        <div class="f-item link">
+                            <h4>Support</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Documentation</a>
+                                </li>
+                                <li>
+                                    <a href="#">Forums</a>
+                                </li>
+                                <li>
+                                    <a href="#">Language Packs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Release Status</a>
+                                </li>
+                                <li>
+                                    <a href="#">LearnPress</a>
+                                </li>
+                                <li>
+                                    <a href="#">Feedback</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>&copy; All Glory to GOD</p>
+                        </div>
+                        <div class="col-md-6 text-right link">
+                            <ul>
+                                <li>
+                                    <a href="#">Terms of user</a>
+                                </li>
+                                <li>
+                                    <a href="#">License</a>
+                                </li>
+                                <li>
+                                    <a href="#">Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/equal-height.min.js"></script>
