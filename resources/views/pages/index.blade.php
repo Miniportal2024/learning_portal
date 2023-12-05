@@ -164,7 +164,7 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">We're glade to see you</h3>
                                             <h1 data-animation="animated slideInUp">explore our brilliant graduates</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">View Courses</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">The goal of education</h3>
                                             <h1 data-animation="animated slideInUp">Join the bigest comunity of eduka</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">View Courses</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
                                 </div>

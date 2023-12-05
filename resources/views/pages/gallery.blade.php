@@ -104,9 +104,9 @@
                                 </div>
                                 <div class="pf-item campus education">
                                     <div class="item-effect">
-                                        <img src="assets/img/gallery/3.jpg" alt="thumb" />
+                                        <img src="assets/img/gallery/urdaneta.jpg" alt="thumb" />
                                         <div class="overlay">
-                                            <a href="assets/img/gallery/3.jpg" class="item popup-link"><i class="fa fa-expand"></i></a>
+                                            <a href="assets/img/gallery/urdaneta.jpg" class="item popup-link"><i class="fa fa-expand"></i></a>
                                             <a href="#"><i class="fas fa-link"></i></a>
                                         </div>
                                     </div>
