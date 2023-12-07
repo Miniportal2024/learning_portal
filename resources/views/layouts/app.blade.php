@@ -152,9 +152,9 @@
                                             <div class="content">
                                                 <ul class="menu-col">
                                                     <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                                    <li><a href="gallery-3-colum">Gallery Three Colum</a></li>
-                                                    <li><a href="gallery-4-colum">Gallery Four Colum</a></li>
-                                                    <li><a href="gallery-6-colum">Gallery Six Colum</a></li>
+                                                    <li><a href="gallery-3-colum">Gallery Three Column</a></li>
+                                                    <li><a href="gallery-4-colum">Gallery Four Column</a></li>
+                                                    <li><a href="gallery-6-colum">Gallery Six Column</a></li>
                                                 </ul>
                                             </div>
                                         </div><!-- end col-3 -->
