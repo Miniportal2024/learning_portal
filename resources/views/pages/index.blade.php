@@ -144,8 +144,8 @@
                                     <div class="col-md-8">
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">Reach you career</h3>
-                                            <h1 data-animation="animated slideInUp">Learn from best online training course</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/about-us">Lear More</a>
+                                            <h1 data-animation="animated slideInUp">Learn from best offline training course</h1>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/about-us">Learn More</a>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                     <div class="col-md-8">
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">We're glade to see you</h3>
-                                            <h1 data-animation="animated slideInUp">explore our brilliant graduates</h1>
+                                            <h1 data-animation="animated slideInUp">explore our brilliant Courses</h1>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                     <div class="col-md-8">
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">The goal of education</h3>
-                                            <h1 data-animation="animated slideInUp">Join the bigest comunity of eduka</h1>
+                                            <h1 data-animation="animated slideInUp">Join the bigest comunity of educators</h1>
                                             <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>

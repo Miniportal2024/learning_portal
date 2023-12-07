@@ -55,7 +55,7 @@
                                         {{$course->overview}}
                                     </p>
                                     <div class="bottom-info">
-                                        <a href="{{route('course-details')}}">More Details</a>
+                                        <a href="/course-details/{{$course->id}}">More Details</a>
                                     </div>
                                 </div>
                             </div>

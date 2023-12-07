@@ -16,15 +16,16 @@ use App\Http\Controllers\CourseController;
 */
 Route::get('/', function () {return view('pages.index');});
 Route::get('/index', function () {return view('pages.index');})->name('index');
-Route::get('/courses', [CourseController::class, 'display'])->name('courses');
-Route::get('/courses-2', function () {return view('pages.courses-2');});
-Route::get('/courses-details', [CourseController::class, 'select'])->name('course-details');
+Route::get('/courses', [CourseController::class, 'display'])->name('new-courses');
+Route::get('/courses-2', function () {return view('pages.courses-2');})->name('old-courses');
+// Route::get('/course-details', function(){return view('pages.course-details');});
+Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
 Route::get('/course-video', function () {return view('pages.course-video');});
-Route::get('/teachers', function () {return view('pages.teachers');});
+Route::get('/developers', function () {return view('pages.developers');})->name('developers');
 Route::get('/teacher-details', function () {return view('pages.teacher-details');});
 Route::get('/index-onepage', function () {return view('pages.index-onepage');});
 Route::get('/event', function () {return view('pages.event');});
-Route::get('/gallery', function () {return view('pages.gallery');});
+Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
 Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
 
 //INSTRUCTOR AND ADMIN DASHBOARD

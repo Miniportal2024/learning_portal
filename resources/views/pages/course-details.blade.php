@@ -7,7 +7,7 @@
 @section('content')
     <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/2.jpg);">
+    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url({{asset('assets/img/banner/2.jpg')}});">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -29,13 +29,13 @@
                         <div class="top-info">
                             <!-- Title-->
                             <div class="title">
-                                <h2>{{$course->name}}</h2>
+                                <h2></h2>
                             </div>
                             <!-- End Title-->
 
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <img src="{{asset($course->img)}}" alt="Thumb">
+                                <img src="" alt="Thumb">
                             </div>
                             <!-- End Thumbnail -->
 
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="desc">
                                         <h4>Author</h4>
-                                        <a href="#">{{course->instructor}}</a>
+                                        <a href="#"></a>
                                     </div>
                                 </div>
                                 <div class="item category">
@@ -81,7 +81,7 @@
                                     <div class="info title">
                                         <h4>Course Desscription</h4>
                                         <p>
-                                            {{course->description}}
+                                            
                                         </p>
                                         <h4>Certification</h4>
                                         <p>

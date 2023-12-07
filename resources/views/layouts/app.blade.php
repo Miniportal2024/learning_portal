@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'COE - Learning-Portal') }}</title>
 
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
 
     <!-- Fonts -->
     <!-- <link rel="dns-prefetch" href="//fonts.bunny.net"> -->
@@ -18,17 +18,17 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
-    <link href="assets/css/elegant-icons.css" rel="stylesheet" />
-    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="assets/css/animate.css" rel="stylesheet" />
-    <link href="assets/css/bootsnav.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/flaticon-set.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/elegant-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/magnific-popup.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/owl.carousel.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/owl.theme.default.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/bootsnav.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" />
     
 
 
@@ -130,7 +130,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index">
+                    <a class="navbar-brand" href="{{route('index')}}">
                         <img src="{{asset('images/Banner.png')}}" style="width:250px; height: 50px; border-radius: 10px;" class="logo" alt="Logo">
                     </a>
                 </div>
@@ -151,7 +151,7 @@
                                             <h6 class="title">Gallery</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="gallery">Gallery</a></li>
+                                                    <li><a href="{{route('gallery')}}">Gallery</a></li>
                                                     <li><a href="gallery-3-colum">Gallery Three Colum</a></li>
                                                     <li><a href="gallery-4-colum">Gallery Four Colum</a></li>
                                                     <li><a href="gallery-6-colum">Gallery Six Colum</a></li>
@@ -162,7 +162,7 @@
                                             <h6 class="title">Advisor</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="advisor-carousel">Advisor Carousel</a></li>
+                                                    <li><a href="{{route('developers')}}">Advisor Carousel</a></li>
                                                     <li><a href="advisor-2-colum">Advisor Two Colum</a></li>
                                                     <li><a href="advisor-3-colum">Advisor Three Colum</a></li>
                                                     <li><a href="advisor-carousel-2">Advisor Carousel Two</a></li>
@@ -184,7 +184,7 @@
                                             <h6 class="title">Other Pages</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="about-us">About Us</a></li>
+                                                    <li><a href="{{route('about-us')}}">About Us</a></li>
                                                     <li><a href="faq">Faq</a></li>
                                                     <li><a href="pricing-table">Pricing Table</a></li>
                                                     <li><a href="contact">Contact</a></li>
@@ -199,36 +199,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Courses</a>
                             <ul class="dropdown-menu">
-                                <li><a href="courses">New Courses</a></li>
-                                <li><a href="courses-2">Old Courses</a></li>
+                                <li><a href="{{route('new-courses')}}">New Courses</a></li>
+                                <li><a href="{{route('old-courses')}}">Old Courses</a></li>
                             </ul>
                         </li>
-                        <!-- <li class="dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Teachers</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="teachers">Advisor</a></li>
-                                <li><a href="teachers-details">Advisor Details</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Event</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="event">Event Mixed Colum</a></li>
-                                <li><a href="event-2">Event Grid Colum</a></li>
-                                <li><a href="event-3">Event Carousel</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-standard">Blog Standard</a></li>
-                                <li><a href="blog-left-sidebar">Blog Left Sidebar</a></li>
-                                <li><a href="blog-right-sidebar">Blog Right Sidebar</a></li>
-                                <li><a href="blog-single-standard">Single Standard</a></li>
-                                <li><a href="blog-single-left-sidebar">Single Left Sidebar</a></li>
-                                <li><a href="blog-single-right-sidebar">Single Right Sidebar</a></li>
-                            </ul>
-                        </li> -->
                         <li>
                             <a href="{{route('about-us')}}">About-Us</a>
                         </li>
@@ -247,7 +221,6 @@
                     <ul>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Courses</a></li>
-                        <li><a href="#">Recent Order</a></li>
                         <li><a href="#">Edit Profile</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
@@ -388,21 +361,21 @@
         <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/equal-height.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/modernizr.custom.13711.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/count-to.js"></script>
-    <script src="assets/js/loopcounter.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/bootsnav.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/equal-height.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.appear.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('assets/js/modernizr.custom.13711.js')}}"></script>
+    <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets/js/wow.min.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/js/count-to.js')}}"></script>
+    <script src="{{asset('assets/js/loopcounter.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootsnav.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 </html>
