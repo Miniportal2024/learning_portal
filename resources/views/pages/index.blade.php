@@ -145,8 +145,8 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">Reach you career</h3>
                                             <h1 data-animation="animated slideInUp">Learn from best offline training course</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/about-us">Learn More</a>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/about-us">About Us</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">We're glade to see you</h3>
                                             <h1 data-animation="animated slideInUp">explore our brilliant Courses</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">The goal of education</h3>
                                             <h1 data-animation="animated slideInUp">Join the bigest comunity of educators</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="/courses">View Courses</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
                                         </div>
                                     </div>
                                 </div>
@@ -219,12 +219,13 @@
                     <div class="col-md-6 info">
                         <h5>Introduction</h5>
                         <h2>Welcome to Virtual Learning Portal</h2>
-                        <p>
+                        <p> <strong>
                             Step into a realm of industry certifications where learning knows no bounds. In today's fast-paced and ever-evolving professional landscape, staying ahead requires more than just traditional learning methods. This innovative platform is designed to offer a comprehensive array of industry certifications, providing you with the tools and resources to thrive in your field.
                         </p>
-                        <p>
-                        Explore a diverse range of certification programs curated to meet the dynamic needs of various industries. Whether you aspire to advance your skills in technology, or other sectors, this platform offers a comprehensive repository of learning resources. Engage in tailored courses, acquire specialized knowledge, and earn certifications that signify your expertise. Join us on this enriching journey of continuous learning and skill enhancement, empowering you to stand out and excel in your chosen profession.</p>
-                        <a href="{{route('about-us')}}" class="btn btn-dark border btn-md">Read More</a>
+                        <p> <strng>
+                            Explore a diverse range of certification programs curated to meet the dynamic needs of various industries. Whether you aspire to advance your skills in technology, or other sectors, this platform offers a comprehensive repository of learning resources. Engage in tailored courses, acquire specialized knowledge, and earn certifications that signify your expertise. Join us on this enriching journey of continuous learning and skill enhancement, empowering you to stand out and excel in your chosen profession.
+                        </p>
+                        <a href="{{route('about-us')}}" class="btn btn-dark border btn-md">About Us</a>
                     </div>
                 </div>
                 <div class="seperator col-md-12">

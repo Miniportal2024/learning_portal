@@ -43,7 +43,7 @@
                             <div class="course-meta">
                                 <div class="item author">
                                     <div class="thumb">
-                                        <a href="#"><img alt="Thumb" src="assets/img/team/8.jpg"></a>
+                                        <a href="#"><img alt="Thumb" src="assets/img/team/1.jpg"></a>
                                     </div>
                                     <div class="desc">
                                         <h4>Author</h4>

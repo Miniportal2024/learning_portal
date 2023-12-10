@@ -34,7 +34,7 @@
                         <div class="item">
                             <div class="thumb">
                                 <a href="course-details.html">
-                                    <img src="assets/img/courses/7.jpg" alt="Thumb">
+                                    <img src="assets/img/courses/AWS 1.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
                                     <a class="btn btn-theme effect btn-sm" href="#">
@@ -44,42 +44,20 @@
                             </div>
                             <div class="info">
                                 <div class="author-info">
-                                    <div class="thumb">
+                                    <!--<div class="thumb">
                                         <a href="#"><img src="assets/img/team/2.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Munil Druva</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span>4.5 (23,890)</span>
-                                        </div>
-                                    </div>
+                                    </div> -->
+                                    
                                 </div>
-                                <h4><a href="course-details.html">Java Programming Masterclass</a></h4>
+                                <h4><a href="course-details.html">AWS</a></h4>
                                 <div class="cats">
                                     <a href="#">Education</a>
                                     <a href="#">Science</a>
                                 </div>
                                 <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                    Would day nor ask walls known. But preserved advantage .
                                 </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        Free
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -99,22 +77,15 @@
                             </div>
                             <div class="info">
                                 <div class="author-info">
-                                    <div class="thumb">
+                                    <!--<div class="thumb">
                                         <a href="#"><img src="assets/img/team/3.jpg" alt="Thumb"></a>
-                                    </div>
+                                    </div> -->
                                     <div class="others">
-                                        <a href="#">Akua Paul</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>5 (1,890)</span>
-                                        </div>
+                                        <!--<a href="#">Microsoft SC-900</a> -->
+                                        
                                     </div>
                                 </div>
-                                <h4><a href="course-details.html">Social Science & Humanities</a></h4>
+                                <h4><a href="course-details.html">Microsoft SC-900</a></h4>
                                 <div class="cats">
                                     <a href="#">Social</a>
                                     <a href="#">Online</a>
@@ -122,19 +93,7 @@
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
                                 </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $12.00
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -154,22 +113,9 @@
                             </div>
                             <div class="info">
                                 <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/img/team/4.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Jon Babu</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span>4.7 (890)</span>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
-                                <h4><a href="course-details.html">Actualized Leadership Network</a></h4>
+                                <h4><a href="course-details.html">CompTIA Cyber Security+</a></h4>
                                 <div class="cats">
                                     <a href="#">Online</a>
                                     <a href="#">Source</a>
@@ -177,19 +123,7 @@
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
                                 </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 8,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 126:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        Free
-                                    </div>
-                                </div>
+                                   
                             </div>
                         </div>
                     </div>
@@ -209,22 +143,9 @@
                             </div>
                             <div class="info">
                                 <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/img/team/7.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Babu Paol</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>5 (980)</span>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
-                                <h4><a href="course-details.html">Machine Learning Management</a></h4>
+                                <h4><a href="course-details.html">Mechatronics and Automation Master Technician</a></h4>
                                 <div class="cats">
                                     <a href="#">PHP</a>
                                     <a href="#">Programming</a>
@@ -232,19 +153,7 @@
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
                                 </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 8,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 256:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $124.00
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -264,22 +173,11 @@
                             </div>
                             <div class="info">
                                 <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/img/team/8.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Mickel Clark</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span>4.5 (23,890)</span>
-                                        </div>
-                                    </div>
+                                
+                                       
+                                
                                 </div>
-                                <h4><a href="course-details.html">Online Programming</a></h4>
+                                <h4><a href="course-details.html">Mechatronics and Automation Technician</a></h4>
                                 <div class="cats">
                                     <a href="#">Education</a>
                                     <a href="#">Science</a>
@@ -287,79 +185,12 @@
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
                                 </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $12.00
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
                     <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-4 col-sm-6 equal-height">
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="course-details.html">
-                                    <img src="assets/img/courses/6.jpg" alt="Thumb">
-                                </a>
-                                <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/img/team/9.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Robert Henry</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>5 (12,890)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="course-details.html">Elementary school courses</a></h4>
-                                <div class="cats">
-                                    <a href="#">Networking</a>
-                                    <a href="#">Online</a>
-                                </div>
-                                <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
-                                </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        Free
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-
+                    
                 </div>
             </div>
         </div>
