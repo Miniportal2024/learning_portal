@@ -14,16 +14,14 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->BigIncrements('id');
             $table->string('name');
-            $table->text('overview');
             $table->text('description');
-            $table->boolean('state');
-            $table->integer('number_of_videos')->nullable();
-            $table->integer('number_of_files')->nullable();
+            $table->string('state');
             $table->string('duration')->nullable();
-            $table->string('instructor')->nullable();
-            $table->string('img');
-            $table->string('file')->nullable();
-            $table->string('rating')->nullable();
+            $table->string('course_img')->nullable();
+            $table->string('author')->nullable();
+            $table->string('author_img')->nullable();
+            $table->string('author_profile')->nullable();
+            $table->Integer('rating')->nullable();
             $table->timestamps();
         });
     }

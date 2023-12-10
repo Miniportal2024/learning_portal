@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->BigIncrements('id');
             $table->string('title');
-            $table->text('description');
-            $table->string('duration')->nullable();
-            $table->string('filepath');
             $table->integer('chapter');
-            $table->string('rating')->nullable();
+            $table->string('file_location');
+            $table->string('duration')->nullable();
+            $table->integer('access_number');
             $table->timestamps();
         });
     }

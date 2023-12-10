@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,9 @@ use App\Http\Controllers\CourseController;
 */
 Route::get('/', function () {return view('pages.index');});
 Route::get('/index', function () {return view('pages.index');})->name('index');
-Route::get('/courses', [CourseController::class, 'display'])->name('new-courses');
-Route::get('/courses-2', function () {return view('pages.courses-2');})->name('old-courses');
-// Route::get('/course-details', function(){return view('pages.course-details');});
+Route::get('/courses', [CourseController::class, 'display'])->name('courses');
+Route::get('/category', [CategoryController::class, 'display'])->name('category');
+// Route::get('/category', function () {return view('pages.courses-2');})->name('old-courses');
 Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
 Route::get('/course-video', function () {return view('pages.course-video');});
 Route::get('/developers', function () {return view('pages.developers');})->name('developers');
