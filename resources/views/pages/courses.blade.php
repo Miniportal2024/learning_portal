@@ -12,11 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Courses</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="#">Page</a></li>
-                        <li class="active">Course</li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
@@ -49,7 +45,7 @@
                                     </div> -->
                                     
                                 </div>
-                                <h4><a href="course-details.html">AWS</a></h4>
+                                <h4><a href="course-details.html">AWS Certified Cloud Practitioner</a></h4>
                                 <div class="cats">
                                     <a href="#">Education</a>
                                     <a href="#">Science</a>
