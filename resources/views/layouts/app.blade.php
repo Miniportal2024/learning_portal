@@ -200,9 +200,16 @@
                             <a href="{{route('category')}}">Categories</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Courses</a>
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >New Courses</a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('courses')}}">New Courses</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Old Courses</a>
+                            <ul class="dropdown-menu">
+                               
                                 <li><a href="{{route('courses')}}">Old Courses</a></li>
                             </ul>
                         </li>

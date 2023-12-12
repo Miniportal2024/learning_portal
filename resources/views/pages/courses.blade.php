@@ -29,7 +29,7 @@
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="course-details.html">
+                                <a href="{{route('course-details')}}">
                                     <img src="assets/img/courses/AWS 1.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
@@ -45,7 +45,7 @@
                                     </div> -->
                                     
                                 </div>
-                                <h4><a href="course-details.html">AWS Certified Cloud Practitioner</a></h4>
+                                <h4><a href="{{route('course-details')}}">AWS Certified Cloud Practitioner</a></h4>
                                 <div class="cats">
                                     <a href="#">Education</a>
                                     <a href="#">Science</a>
@@ -62,7 +62,7 @@
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="course-details.html">
+                                <a href="{{route('course-details')}}">
                                     <img src="assets/img/courses/2.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
@@ -81,7 +81,7 @@
                                         
                                     </div>
                                 </div>
-                                <h4><a href="course-details.html">Microsoft SC-900</a></h4>
+                                <h4><a href="{{route('course-details')}}">Microsoft SC-900</a></h4>
                                 <div class="cats">
                                     <a href="#">Social</a>
                                     <a href="#">Online</a>
@@ -98,7 +98,7 @@
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="course-details.html">
+                                <a href="{{route('course-details')}}">
                                     <img src="assets/img/courses/3.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
@@ -111,7 +111,7 @@
                                 <div class="author-info">
                                     
                                 </div>
-                                <h4><a href="course-details.html">CompTIA Cyber Security+</a></h4>
+                                <h4><a href="{{route('course-details')}}">CompTIA Cyber Security+</a></h4>
                                 <div class="cats">
                                     <a href="#">Online</a>
                                     <a href="#">Source</a>
@@ -128,7 +128,7 @@
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="course-details.html">
+                                <a href="{{route('course-details')}}">
                                     <img src="assets/img/courses/4.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
@@ -141,7 +141,7 @@
                                 <div class="author-info">
                                     
                                 </div>
-                                <h4><a href="course-details.html">Mechatronics and Automation Master Technician</a></h4>
+                                <h4><a href="{{route('course-details')}}">Mechatronics and Automation Master Technician</a></h4>
                                 <div class="cats">
                                     <a href="#">PHP</a>
                                     <a href="#">Programming</a>
@@ -158,7 +158,7 @@
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="course-details.html">
+                                <a href="{{route('course-details')}}">
                                     <img src="assets/img/courses/5.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
@@ -173,7 +173,7 @@
                                        
                                 
                                 </div>
-                                <h4><a href="course-details.html">Mechatronics and Automation Technician</a></h4>
+                                <h4><a href="{{route('course-details')}}">Mechatronics and Automation Technician</a></h4>
                                 <div class="cats">
                                     <a href="#">Education</a>
                                     <a href="#">Science</a>
