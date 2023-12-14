@@ -10,7 +10,6 @@ class VideoController extends Controller
     public function read(){
         $videos = Videos::limit(12)->get();
         // $courses = $courses->find(1);
-       dd($videos);
         return view('pages.course-video', compact('videos'));
     }
 }
