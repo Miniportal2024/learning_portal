@@ -29,9 +29,8 @@
                             <div class="item">
                                 <div class="thumb">
                                     <a href="category-details">
-                                        <img src="{{asset($category->img)}}" alt="Thumb">
+                                        <img src="{{asset('storage/'.$category->img)}}" alt="Thumb">
                                     </a>
-                                    <div class="price">{{$category->name}}</div>
                                 </div>
                                 <div class="info">
                                     <div class="author-info">
@@ -50,12 +49,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h4><a href="category-details">Cloud Computing</a></h4>
-                                    <p>
-                                        {{$category->overview}}
-                                    </p>
+                                    <h4>{{$category->name}}</h4>
                                     <div class="bottom-info">
-                                        <a href="">More Details</a>
+                                        <a href="{{route('courses')}}">More Details</a>
                                     </div>
                                 </div>
                             </div>
