@@ -49,9 +49,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h4>{{$category->name}}</h4>
-                                    <div class="bottom-info">
-                                        <a href="{{route('courses')}}">More Details</a>
+                                    <h4 style="text-align: center;">{{$category->name}}</h4>
+                                    <div class="bottom-info" style="display: flex; flex-direction: column; align-items: center;">
+                                        <a href="/courses/{{$category->id}}">More Details</a>
                                     </div>
                                 </div>
                             </div>

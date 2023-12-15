@@ -14,10 +14,10 @@ class Course extends Model
     protected $fillable = ['name', 'overview', 'description', 'state', 'number_of_videos','number_of_files', 'duration', 'instructor', 'img', 'file', 'rating'];
 
     public function videos(){
-        return $this->hasMany(Videos::class);
+        return $this->belongsToMany(Videos::class);
     }
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Category::class);
     }
     
 }

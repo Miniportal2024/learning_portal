@@ -11,8 +11,9 @@ class Category extends Model
     use HasFactory;
     protected $table = 'categories';
     protected $fillable = ['name', 'description', 'duration', 'instructor', 'img', 'rating'];
+
     public function courses(){
-        return $this->hasMany(Course::class);
+        return $this->belongsToMany(Course::class);
     }
 
 }
