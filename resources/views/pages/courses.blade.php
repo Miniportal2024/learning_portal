@@ -186,7 +186,35 @@
                         </div>
                     </div>
                     <!-- End Single Item -->
-                    
+                    @foreach($courses as $courses)
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="{{route('course-details')}}">
+                                    <img src="assets/img/courses/AWS 1.jpg" alt="Thumb">
+                                </a>
+                                <div class="overlay">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="author-info">
+                                    <!--<div class="thumb">
+                                        <a href="#"><img src="assets/img/team/2.jpg" alt="Thumb"></a>
+                                    </div> -->
+                                    <h4 style="text-align: center;">
+                                    <a>
+                                    Author:<STRONG>
+                                    </a>{{$courses->author}}</h4>
+                                </div>
+                                <h4 style="text-align: center;">{{$courses->name}}</h4>
+                     
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

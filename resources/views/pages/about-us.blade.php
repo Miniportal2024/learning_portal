@@ -150,7 +150,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>developers</h2>
+                        <h2>DEVELOPERS</h2>
                         <p>
                             need mag lagay dito
                         </p>

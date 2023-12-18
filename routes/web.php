@@ -30,7 +30,6 @@ Route::get('/index-onepage', function () {return view('pages.index-onepage');});
 Route::get('/event', function () {return view('pages.event');});
 Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
 Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
-Route::get('/Old_courses', [CourseController::class, 'display'])->name('Old_courses');
 Route::get('/videos', [VideoController::class, 'read'])->name('videos');
 
 

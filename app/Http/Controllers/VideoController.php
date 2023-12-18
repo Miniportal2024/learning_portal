@@ -8,7 +8,7 @@ use App\Models\Videos;
 class VideoController extends Controller
 {
     public function read(){
-        $videos = Videos::limit(12)->get();
+        $videos = Videos::first();
         // $courses = $courses->find(1);
         return view('pages.course-video', compact('videos'));
     }
