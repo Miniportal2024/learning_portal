@@ -202,7 +202,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >New Courses</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{route('courses')}}">New Courses</a></li>
+                                <li><a href="{{route('new-courses')}}">New Courses</a></li>
                                 
                             </ul>
                         </li>
@@ -210,7 +210,7 @@
                             <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Old Courses</a>
                             <ul class="dropdown-menu">
                                
-                                <li><a href="{{route('courses')}}">Old Courses</a></li>
+                                <li><a href="{{route('old-courses')}}">Old Courses</a></li>
                             </ul>
                         </li>
                         <li>

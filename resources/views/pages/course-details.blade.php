@@ -35,7 +35,7 @@
 
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <img src="" alt="Thumb">
+                                <a href="/course-video/{{$category->id}}"><img src="{{asset('storage/'.$category->img)}}" alt="Thumb"></a>
                             </div>
                             <!-- End Thumbnail -->
 
@@ -43,16 +43,15 @@
                             <div class="course-meta">
                                 <div class="item author">
                                     <div class="thumb">
-                                        <a href="#"><img alt="Thumb" src="assets/img/team/1.jpg"></a>
+                                        <a href="#"><img alt="Thumb" src="{{asset('storage/'.$category->img)}}"></a>
                                     </div>
                                     <div class="desc">
-                                        <h4>Author</h4>
-                                        <a href="#"></a>
+                                        <h4>{{$category->author}}</h4>
                                     </div>
                                 </div>
                                 <div class="item category">
                                     <h4>Category</h4>
-                                    <a href="#">Cloud Computing</a>
+                                    <a href="/course-video/{{$category->id}}">{{$category->name}}</a>
                                 </div>
                                 <div class="item rating">
                                     <h4>Rating</h4>
@@ -64,7 +63,7 @@
                                     <span>4.5 (16)</span>
                                 </div>
                                 <div class="align-right">
-                                    <a class="btn btn-dark effect btn-sm" href="course-video">
+                                    <a class="btn btn-dark effect btn-sm" href="/course-video/{{$category->id}}">
                                         <i class="fas fa-chart-bar"></i> Study Now
                                     </a>
                                 </div>
@@ -81,11 +80,7 @@
                                     <div class="info title">
                                         <h4>Course Desscription</h4>
                                         <p>
-                                            
-                                        </p>
-                                        <h4>Certification</h4>
-                                        <p>
-                                            Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
+                                            {{$category->description}}
                                         </p>
                                         <h4>Learning Outcomes</h4>
                                         <ul>
@@ -123,25 +118,15 @@
                             <!-- Sidebar Item -->
                             <div class="sidebar-item category">
                                 <div class="title">
-                                    <h4>Courses Category</h4>
+                                    <h4>Suggested Categories</h4>
                                 </div>
                                 <div class="sidebar-info">
                                     <ul>
-                                        <li>
-                                            <a href="#">Java Programming <span>23</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Social Science <span>0</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Business Management <span>12</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Online Learning <span>17</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Course Management <span>0</span></a>
-                                        </li>
+                                        @foreach($suggested_categories as $category)
+                                            <li>
+                                                <a href="/category/{{$category->id}}">{{$category->name}}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -150,19 +135,19 @@
                             <!-- Sidebar Item -->
                             <div class="sidebar-item recent-post">
                                 <div class="title">
-                                    <h4>Popular Courses</h4>
+                                    <h4>Suggested Courses</h4>
                                 </div>
-                                
+                                @foreach($suggested_courses as $course)
                                 <div class="item">
                                     <div class="content">
                                         <div class="thumb">
                                             <a href="#">
-                                                <img src="assets/img/courses/g1.jpg" alt="Thumb">
+                                                <img src="{{asset('storage/'.$course->img)}}" alt="Thumb">
                                             </a>
                                         </div>
                                         <div class="info">
                                             <h4>
-                                                <a href="#">Profession paython learing</a>
+                                                <a href="/courses/{{$course->id}}">{{$course->name}}</a>
                                             </h4>
                                             <div class="rating">
                                                 <i class="fas fa-star"></i>
@@ -173,61 +158,12 @@
                                                 <span>4.5 (23,890)</span>
                                             </div>
                                             <div class="meta">
-                                                <i class="fas fa-user"></i> By <a href="#">Drup Paul</a> 
+                                                <i class="fas fa-user"></i> By <a href="#">{{$course->author}}</a> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="content">
-                                        <div class="thumb">
-                                            <a href="#">
-                                                <img src="assets/img/courses/g2.jpg" alt="Thumb">
-                                            </a>
-                                        </div>
-                                        <div class="info">
-                                            <h4>
-                                                <a href="#">Profession paython learing</a>
-                                            </h4>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                                <span>4.5 (23,890)</span>
-                                            </div>
-                                            <div class="meta">
-                                                <i class="fas fa-user"></i> By <a href="#">Drup Paul</a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="content">
-                                        <div class="thumb">
-                                            <a href="#">
-                                                <img src="assets/img/courses/g3.jpg" alt="Thumb">
-                                            </a>
-                                        </div>
-                                        <div class="info">
-                                            <h4>
-                                                <a href="#">Profession paython learing</a>
-                                            </h4>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                                <span>4.5 (23,890)</span>
-                                            </div>
-                                            <div class="meta">
-                                                <i class="fas fa-user"></i> By <a href="#">Drup Paul</a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <!-- End Sidebar Item -->
 

@@ -35,7 +35,7 @@
                                 <div class="info">
                                     <div class="author-info">
                                         <div class="thumb">
-                                            <a href="#"><img src="assets/img/team/7.jpg" alt="Thumb"></a>
+                                            <a href="#"><img src="{{asset('storage/'.$category->img)}}" alt="Thumb"></a>
                                         </div>
                                         <div class="others">
                                             <a href="#">{{$category->instructor}}</a>

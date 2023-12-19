@@ -18,12 +18,15 @@ use App\Http\Controllers\VideoController;
 */
 Route::get('/', function () {return view('pages.index');});
 Route::get('/index', function () {return view('pages.index');})->name('index');
-Route::get('/courses', [CourseController::class, 'display'])->name('courses');
+Route::get('/new-courses', [CourseController::class, 'new_courses'])->name('new-courses');
+Route::get('/old-courses', [CourseController::class, 'old_courses'])->name('old-courses');
+Route::get('/courses/{id}', [CourseController::class, 'display'])->name('courses');
 Route::get('/category', [CategoryController::class, 'display'])->name('category');
 // Route::get('/category', function () {return view('pages.courses-2');})->name('old-courses');
 //Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
-Route::get('/course-details', function (){return view('pages.course-details');})->name('course-details');
-Route::get('/course-video', [VideoController::class, 'read']);
+Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
+Route::get('/course-video/{id}', [VideoController::class, 'select']);
+Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
 Route::get('/developers', function () {return view('pages.developers');})->name('developers');
 Route::get('/teacher-details', function () {return view('pages.teacher-details');});
 Route::get('/index-onepage', function () {return view('pages.index-onepage');});

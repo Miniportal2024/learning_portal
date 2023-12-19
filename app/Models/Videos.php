@@ -13,6 +13,6 @@ class Videos extends Model
     protected $fillable = ['id', 'title', 'chapter', 'file_location', 'duration', 'access_number'];
     
     public function course(){
-        return $this->belongsTo(Course::class);
+        return $this->belongsToMany(Course::class, 'course_resources', 'video_id', 'course_id');
     }
 }

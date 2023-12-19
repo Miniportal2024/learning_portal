@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+    <!-- Start Breadcrumb 
+    ============================================= -->
     <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/2.jpg);">
         <div class="container">
             <div class="row">
@@ -15,20 +17,152 @@
             </div>
         </div>
     </div>
-
+    <!-- End Breadcrumb -->
+    
+    <!-- Start Popular Courses 
+    ============================================= -->
     <div class="popular-courses default-padding bottom-less without-carousel">
         <div class="container">
             <div class="row">
                 <div class="popular-courses-items bottom-price">
-                    @foreach($courses as $course)
+                    <!-- Single Item -->
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
                             <div class="thumb">
-                                <a href="/course-details/{{$course->id}}">
-                                    <img src="{{asset('storage/'.$course->img)}}" alt="Thumb">
+                                <a href="#">
+                                    <img src="assets/img/courses/AWS 1.jpg" alt="Thumb">
                                 </a>
                                 <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="/course-details/{{$course->id}}">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="author-info">
+                                    <!--<div class="thumb">
+                                        <a href="#"><img src="assets/img/team/2.jpg" alt="Thumb"></a>
+                                    </div> -->
+                                    
+                                </div>
+                                <h4><a href="#">AWS Certified Cloud Practitioner</a></h4>
+                                <div class="cats">
+                                    <a href="#">Education</a>
+                                    <a href="#">Science</a>
+                                </div>
+                                <p>
+                                    Would day nor ask walls known. But preserved advantage .
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/img/courses/2.jpg" alt="Thumb">
+                                </a>
+                                <div class="overlay">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="author-info">
+                                    <!--<div class="thumb">
+                                        <a href="#"><img src="assets/img/team/3.jpg" alt="Thumb"></a>
+                                    </div> -->
+                                    <div class="others">
+                                        <!--<a href="#">Microsoft SC-900</a> -->
+                                        
+                                    </div>
+                                </div>
+                                <h4><a href="#">Microsoft SC-900</a></h4>
+                                <div class="cats">
+                                    <a href="#">Social</a>
+                                    <a href="#">Online</a>
+                                </div>
+                                <p>
+                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/img/courses/3.jpg" alt="Thumb">
+                                </a>
+                                <div class="overlay">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="author-info">
+                                    
+                                </div>
+                                <h4><a href="#">CompTIA Cyber Security+</a></h4>
+                                <div class="cats">
+                                    <a href="#">Online</a>
+                                    <a href="#">Source</a>
+                                </div>
+                                <p>
+                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                </p>
+                                   
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/img/courses/4.jpg" alt="Thumb">
+                                </a>
+                                <div class="overlay">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="author-info">
+                                    
+                                </div>
+                                <h4><a href="#">Mechatronics and Automation Master Technician</a></h4>
+                                <div class="cats">
+                                    <a href="#">PHP</a>
+                                    <a href="#">Programming</a>
+                                </div>
+                                <p>
+                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="assets/img/courses/5.jpg" alt="Thumb">
+                                </a>
+                                <div class="overlay">
+                                    <a class="btn btn-theme effect btn-sm" href="#">
                                         <i class="fas fa-chart-bar"></i> Enroll Now
                                     </a>
                                 </div>
@@ -39,9 +173,10 @@
                                        
                                 
                                 </div>
-                                <h4><a href="/course-details/{{$course->id}}">{{$course->name}}</a></h4>
+                                <h4><a href="#">Mechatronics and Automation Technician</a></h4>
                                 <div class="cats">
-                                    <a href="#"></a>
+                                    <a href="#">Education</a>
+                                    <a href="#">Science</a>
                                 </div>
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
@@ -50,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    <!-- End Single Item -->
                 </div>
             </div>
         </div>
