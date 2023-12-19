@@ -7,7 +7,7 @@
 @section('content')
     <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/urdaneta.jpg);">
+    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url({{asset('assets/img/banner/urdaneta.jpg')}});">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -32,7 +32,7 @@
                                 </a>
                                 <div class="overlay">
                                     <a class="btn btn-theme effect btn-sm" href="/course-details/{{$course->id}}">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
+                                        <i class="fas fa-chart-bar"></i> Learn More
                                     </a>
                                 </div>
                             </div>

@@ -35,7 +35,7 @@
 
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <a href="/course-video/{{$category->id}}"><img src="{{asset('storage/'.$category->img)}}" alt="Thumb"></a>
+                                <a href="/course-video/{{$course->id}}"><img style="width: 80em;max-width: 750px;max-height: 500px;height: 50em;" src="{{asset('storage/'.$course->course_img)}}" alt="Thumb"></a>
                             </div>
                             <!-- End Thumbnail -->
 
@@ -43,10 +43,10 @@
                             <div class="course-meta">
                                 <div class="item author">
                                     <div class="thumb">
-                                        <a href="#"><img alt="Thumb" src="{{asset('storage/'.$category->img)}}"></a>
+                                        <a href="#"><img alt="Thumb" src="{{asset('storage/'.$course->course_img)}}"></a>
                                     </div>
                                     <div class="desc">
-                                        <h4>{{$category->author}}</h4>
+                                        <h4>{{$course->author}}</h4>
                                     </div>
                                 </div>
                                 <div class="item category">
@@ -63,7 +63,7 @@
                                     <span>4.5 (16)</span>
                                 </div>
                                 <div class="align-right">
-                                    <a class="btn btn-dark effect btn-sm" href="/course-video/{{$category->id}}">
+                                    <a class="btn btn-dark effect btn-sm" href="/course-video/{{$course->id}}">
                                         <i class="fas fa-chart-bar"></i> Study Now
                                     </a>
                                 </div>
@@ -142,7 +142,7 @@
                                     <div class="content">
                                         <div class="thumb">
                                             <a href="#">
-                                                <img src="{{asset('storage/'.$course->img)}}" alt="Thumb">
+                                                <img src="{{asset('storage/'.$course->course_img)}}" alt="Thumb">
                                             </a>
                                         </div>
                                         <div class="info">

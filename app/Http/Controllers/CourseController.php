@@ -25,11 +25,12 @@ class CourseController extends Controller
     }
     public function select($id){
         $suggested_courses = array();
-        $course = Course::find($id);
+        $course = Course::where('id',$id)->first();
         $category = $course->category->first();
+        //dd($course);
         $suggested_categories = Category::all()->whereNotIn('id', [$category->id])->take(3);
         $suggested_courses = $category->courses->take(5);
         
-        return view('pages.course-details', compact('category', 'suggested_categories', 'suggested_courses'));
+        return view('pages.course-details', compact('course','category', 'suggested_categories', 'suggested_courses'));
     }
 }
