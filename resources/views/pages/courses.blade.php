@@ -27,7 +27,8 @@
                         <div class="item">
                             <div class="thumb">
                                 <a href="/course-details/{{$course->id}}">
-                                    <img src="{{asset('storage/'.$course->img)}}" alt="Thumb">
+                                    
+                                    <img src="{{asset('storage/'.$course->course_img)}}" alt="Thumb">
                                 </a>
                                 <div class="overlay">
                                     <a class="btn btn-theme effect btn-sm" href="/course-details/{{$course->id}}">

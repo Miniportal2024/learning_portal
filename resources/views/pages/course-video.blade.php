@@ -18,7 +18,7 @@
                         <div class="top-info">
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <video style="width: 100%" controls no-download src="{{asset('storage/'.$video['file_location'])}}"></video>
+                                <video style="width: 100%" controls controlsList="nodownload" src="{{asset('storage/'.$video['file_location'])}}"></video>
                             </div>
                             <!-- End Thumbnail -->
                             <br>

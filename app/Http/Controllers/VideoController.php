@@ -15,7 +15,7 @@ class VideoController extends Controller
     }
     public function select($id){
         $course = Course::find($id);
-        $list_of_videos = $course->videos->sortByDesc('id');
+        $list_of_videos = $course->videos->sortBy('id');
         $video = $list_of_videos->first()->toArray();
         $course = $course->toArray();
         // dd($video, $course, $list_of_videos);
@@ -24,7 +24,7 @@ class VideoController extends Controller
     public function view($id){
         $video = Videos::find($id);
         $course = $video->course->first();
-        $list_of_videos = $course->videos->sortByDesc('id');
+        $list_of_videos = $course->videos->sortBy('id');
         $course = $course->toArray();
         $video = $video->toArray();
         // dd($video, $course, $list_of_videos);
