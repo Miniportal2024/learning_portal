@@ -29,9 +29,9 @@
                             <div class="item">
                                 <div class="thumb">
                                     <a href="category-details">
-                                        <img src="{{asset('storage/'.$category->img)}}" alt="Thumb">
+                                        <img src="{{asset('storage/'.$category->img)}}" alt="">
                                     </a>
-                                </div>
+                                </div>`
                                 <div class="info">
                                     <div class="author-info">
                                         <div class="thumb">
