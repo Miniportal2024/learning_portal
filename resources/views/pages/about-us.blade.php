@@ -5,7 +5,7 @@
 @section('content')
     <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/21.jpg);">
+    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/urdaneta.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -152,7 +152,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h2>DEVELOPERS</h2>
                         <p>
-                            need mag lagay dito
+                            Virtual Learning Portal for Industry certification
                         </p>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/1.jpg" alt="Thumb">  
+                                <img src="assets/img/advisor/johns.jpg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>johns cae A. macaraeg</h4>
                                     <span>Computer Engineering Student</span>
@@ -188,7 +188,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/2.jpg" alt="Thumb">  
+                                <img src="assets/img/advisor/car.jpg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>Maricar H. Millon</h4>
                                     <span>Computer Engineering Student</span>
@@ -212,7 +212,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/3.jpg" alt="Thumb">  
+                                <img src="assets/img/advisor/loyd.jpeg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>John Lloyd De Guzman</h4>
                                     <span>Computer Engineering Student</span>
@@ -251,29 +251,7 @@
 
     <!-- Start Video Area
     ============================================= -->
-    <div class="video-area padding-xl text-center bg-fixed text-light shadow dark-hard" style="background-image: url(assets/img/banner/16.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="video-heading">
-                        <h2>Take a short tour in our campus</h2>
-                        <p>
-                            Tolerably behaviour may admitting daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if mr narrow points. Melancholy particular devonshire alteration it favourable appearance
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="video-info">
-                    <div class="overlay-video">
-                        <a class="popup-youtube video-play-button" href="https://www.youtube.com/watch?v=8GQTt50izkg">
-                            <i class="fa fa-play"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- End Video Area -->
 
    

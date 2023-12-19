@@ -7,7 +7,7 @@
 @section('content')
     <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/2.jpg);">
+    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light" style="background-image: url(assets/img/banner/urdaneta.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
