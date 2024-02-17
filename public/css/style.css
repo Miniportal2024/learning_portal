@@ -200,7 +200,36 @@ b, strong {
  .btn:hover {
   outline: 0;
 }
+/* Breadcrumb styles */
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 16px;
+}
 
+.breadcrumb li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.breadcrumb li::after {
+    content: '';
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #666;
+}
+
+.breadcrumb li:last-child::after {
+    content: '';
+}
+
+/* Optional: Add styles for links */
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
 .btn.circle {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;

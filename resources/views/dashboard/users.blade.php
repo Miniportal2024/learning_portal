@@ -1,233 +1,76 @@
-@extends('layouts.app_dashboard')
+@extends('layouts.app')
 
 @section('link')
     <link href="{{asset('vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
 @endsection
-
+@include('components.user-modal')
 @section('content')
-    <div class="content-body">
+    <div class="content-body" style="padding: 30px; 50px">
         <div class="container-fluid">
-            
-            <div class="row page-titles">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Table</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Datatable</a></li>
-                </ol>
+            <div>
+                <ul class="breadcrumb">
+                    <li><a href="#">Administrator</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li>Users</li>
+                </ul>
             </div>
-            <!-- row -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Profile Datatable</h4>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa-solid fa-user-plus"></i> Add User</button>
+                                
+            <div class="">
+
+                <div class="" style="width: 100%">
+                    <div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+                    <div class="row">
+                        <div class="alert alert-success alert-dismissible alert-alt fade" style="display: none;" id="success_alert" hidden>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+                                <span><i class="fa-solid fa-xmark"></i></span>
+                            </button>
+                            <strong>Success!</strong> User Succesfully Added.
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="example3" class="display" style="min-width: 845px">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>Role</th>
-                                            <th>Name</th>
-                                            <th>ID Number</th>
-                                            <th>E-mail</th>
-                                            <th>Created_at</th>
-                                            <th>Update_at</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="datatable">
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="alert alert-success alert-dismissible alert-alt fade" style="display: none;" id="edit_success_alert" hidden>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+                                <span><i class="fa-solid fa-xmark"></i></span>
+                            </button>
+                            <strong>Success!</strong> User Succesfully Updated.
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bootstrap-modal">
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">User Information</h4>
-                                        </div>
+                        <div class="col-xl-12">
+                            <div class="" id="">
+                                <!-- <div class="card-header flex-wrap d-flex justify-content-between  border-0"> -->
+                                <!-- </div> -->
+                                <div class="" id="" style="color: black; border: 2px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); padding: 5px;">
+                                    <div class="" id="bordered" role="tabpanel" aria-labelledby="home-tab-1">
                                         <div class="card-body">
-                                            <div class="basic-form">
-                                                <form class="form-valide-with-icon needs-validation" novalidate>
-                                                    @csrf
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="dz-password">User Type</label>
-                                                        <div class="input-group transparent-append">
-                                                        <input type="hidden" id="user_id">
-                                                            <select class="form-control" id="role" placeholder="Choose a safe one.." required>
-                                                                <option selected disabled>(Type of User)</option>
-                                                                <option>Administrator</option>
-                                                                <option>Instructor</option>
-                                                                <option>Student</option>
-                                                            </select>
-                                                            <div class="invalid-feedback">
-                                                                Please choose User type.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_role"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">Name</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control" id="name" placeholder="Name" required>
-                                                            <div class="invalid-feedback">
-                                                                Name
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_fname"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">E-mail</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control" id="email" placeholder="E-mail" required>
-                                                            <div class="invalid-feedback">
-                                                                E-mail
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_lname"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">ID number</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control id_number" id="id_number" placeholder="Enter an ID number.." required>
-                                                            <div class="invalid-feedback">
-                                                                Please Enter an ID number.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_idnumber"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="dz-password">Password *</label>
-                                                        <div class="input-group transparent-append">
-                                                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                                                            <input type="password" class="form-control" id="password" placeholder="Choose a safe one.." required>
-                                                            <span class="input-group-text show-pass">
-                                                                <i class="fa fa-eye-slash"></i>
-                                                                <i class="fa fa-eye"></i>
-                                                            </span>
-                                                            <div class="invalid-feedback">
-                                                                Please Enter a password.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_pword"></span>
-                                                    </div>
-                                                </form>
+                                            <div class="table-responsive" style="min-height: 380px; max-height: 380px; padding: 10px;">
+                                                <table class="table table-responsive-md" style="text-align:center">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 20%; text-align:center;"><strong>Role</strong></th>
+                                                            <th style="width: 20%; text-align:center;"><strong>Name</strong></th>
+                                                            <th style="width: 20%; text-align:center;"><strong>ID Number</strong></th>
+                                                            <th style="width: 20%; text-align:center;"><strong>E-mail</strong></th>
+                                                            <th style="width: 20%; text-align:center;"><strong>Action</strong></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="datatable" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 1.4rem">
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="save_user">Save changes</button>
+                                <br>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".add-user-modal">
+                                    <i class="fa-solid fa-add me-2"></i>Delete User/s
+                                </button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target=".add-user-modal">
+                                    <i class="fa-solid fa-add me-2"></i>Add User
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- update -->
-                <div class="modal fade bd-update-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Update User</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="basic-form">
-                                                <form class="form-valide-with-icon needs-validation" novalidate>
-                                                    @csrf
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="dz-password">User Type</label>
-                                                        <div class="input-group transparent-append">
-                                                        <input type="hidden" id="user_id">
-                                                            <select class="form-control" id="edit_role" placeholder="Choose a safe one.." required>
-                                                                <option selected disabled>(Type of User)</option>
-                                                                <option>Administrator</option>
-                                                                <option>Instructor</option>
-                                                                <option>Student</option>
-                                                            </select>
-                                                            <div class="invalid-feedback">
-                                                                Please choose User type.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_role"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">Name</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control" id="edit_name" placeholder="Name" required>
-                                                            <div class="invalid-feedback">
-                                                                Name
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_fname"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">E-mail</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control" id="edit_email" placeholder="E-mail" required>
-                                                            <div class="invalid-feedback">
-                                                                E-mail
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_lname"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="validationCustomUsername">ID number</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                                            <input type="text" class="form-control id_number" id="edit_id_number" placeholder="Enter an ID number.." required>
-                                                            <div class="invalid-feedback">
-                                                                Please Enter an ID number.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_idnumber"></span>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label" for="dz-password">Password *</label>
-                                                        <div class="input-group transparent-append">
-                                                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                                                            <input type="password" class="form-control" id="password" placeholder="Choose a safe one.." required>
-                                                            <span class="input-group-text show-pass">
-                                                                <i class="fa fa-eye-slash"></i>
-                                                                <i class="fa fa-eye"></i>
-                                                            </span>
-                                                            <div class="invalid-feedback">
-                                                                Please Enter a password.
-                                                            </div>
-                                                        </div>
-                                                        <span style="color: red" id="error_pword"></span>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="update_user">Save changes</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 @endsection
     
@@ -305,7 +148,7 @@
         // display list of users
         const displayUser = () => {
             $.ajax({
-                url: '/dashboard/user-display',
+                url: '{{route('dashboard.users.display')}}',
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
@@ -314,17 +157,14 @@
                         user.roles.forEach(role => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
-                            <td><img class="rounded-circle" width="35" src="{{asset('images/profile/pic1.png')}}" alt=""></td>
                             <td>${role.name}</td>
                             <td>${user.name}</td>
                             <td>${user['id_number']}</td>
                             <td>${user.email}</td>
-                            <td>${user.created_at}</td>
-                            <td>${user.updated_at}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="javascript:void(0)" onclick="edit_user(${user.id})" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".bd-update-modal-lg"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="javascript:void(0)" onclick="delete_user(${user.id})" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                    <a href="javascript:void(0)" onclick="edit_user(${user.id})" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".bd-update-modal-lg" style="border-radius: 5px; padding:5px;"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="javascript:void(0)" onclick="delete_user(${user.id})" class="btn btn-danger shadow btn-xs sharp" style="border-radius: 5px; padding:5px;"><i class="fa fa-trash"></i></a>
                                 </div>												
                             </td>
                         `;

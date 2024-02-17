@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,45 +18,57 @@ use App\Http\Controllers\VideoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {return view('pages.index');});
-Route::get('/index', function () {return view('pages.index');})->name('index');
-Route::get('/new-courses', [CourseController::class, 'new_courses'])->name('new-courses');
-Route::get('/old-courses', [CourseController::class, 'old_courses'])->name('old-courses');
-Route::get('/courses/{id}', [CourseController::class, 'display'])->name('courses');
-Route::get('/category', [CategoryController::class, 'display'])->name('category');
-// Route::get('/category', function () {return view('pages.courses-2');})->name('old-courses');
-//Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
-Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
-Route::get('/course-video/{id}', [VideoController::class, 'select']);
-Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
-Route::get('/developers', function () {return view('pages.developers');})->name('developers');
-Route::get('/teacher-details', function () {return view('pages.teacher-details');});
-Route::get('/index-onepage', function () {return view('pages.index-onepage');});
-Route::get('/event', function () {return view('pages.event');});
-Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
-Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
-Route::get('/videos', [VideoController::class, 'read'])->name('videos');
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index'])->name('pages.home');
+    Route::post('/user/logout', [LoginController::class, 'logout'])->name('user.logout');
+    // Route::get('/', function () {return view('pages.index');});
+    // Route::get('/index', function () {return view('pages.index');})->name('index');
 
 
+    Route::get('/new-courses', [CourseController::class, 'new_courses'])->name('new-courses');
+    Route::get('/old-courses', [CourseController::class, 'old_courses'])->name('old-courses');
+    Route::get('/courses/{id}', [CourseController::class, 'display'])->name('courses');
+    Route::get('/category', [CategoryController::class, 'display'])->name('category');
+    // Route::get('/category', function () {return view('pages.courses-2');})->name('old-courses');
+    //Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
+    Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
+    Route::get('/course-video/{id}', [VideoController::class, 'select']);
+    Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
+    Route::get('/developers', function () {return view('pages.developers');})->name('developers');
+    Route::get('/teacher-details', function () {return view('pages.teacher-details');});
+    Route::get('/index-onepage', function () {return view('pages.index-onepage');});
+    Route::get('/event', function () {return view('pages.event');});
+    Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
+    Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
+    Route::get('/videos', [VideoController::class, 'read'])->name('videos');
 
-//INSTRUCTOR AND ADMIN DASHBOARD
-// Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard-index');
-// Route::get('/dashboard', function () {return view('dashboard.dashboard');});    
-// Route::get('/table-datatable-basic', function () {return view('dashboard.table-datatable-basic');});
-// Route::get('/form-element', function () {return view('dashboard.form-element');});
-// Route::get('/form-validation', function () {return view('dashboard.form-validation');});
-// Route::get('/ui-modal', function () {return view('dashboard.ui-modal');});
-// Route::get('/ui-alert', function () {return view('dashboard.ui-alert');});
-// Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert');});
 
-//User
-// Route::get('/dashboard/users', [UserController::class, 'index']);   
-// Route::get('/dashboard/edit/{id}', [UserController::class, 'edit']);   
-// Route::get('/dashboard/user-display', [UserController::class, 'display']);  
-// Route::put('/dashboard/user-update', [UserController::class, 'update']);    
-// Route::delete('/dashboard/user-delete', [UserController::class, 'delete']);     
-// Route::post('/dashboard/user-save', [UserController::class, 'save']);    
+    Route::middleware(['role:Administrator'])->prefix('administrator')->group(function () {
+
+        //INSTRUCTOR AND ADMIN DASHBOARD
+        // Route::get('/dashboard', function () {return view('dashboard.dashboard');});    
+        // Route::get('/table-datatable-basic', function () {return view('dashboard.table-datatable-basic');});
+        // Route::get('/form-element', function () {return view('dashboard.form-element');});
+        // Route::get('/form-validation', function () {return view('dashboard.form-validation');});
+        // Route::get('/ui-modal', function () {return view('dashboard.ui-modal');});
+        // Route::get('/ui-alert', function () {return view('dashboard.ui-alert');});
+        // Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert');});
+
+        Route::get('/dashboard/quizzes', [UserController::class, 'index'])->name('dashboard.quizzes');  
+        Route::get('/dashboard/settings', [UserController::class, 'index'])->name('dashboard.settings');  
+        // //User
+        Route::get('/dashboard/users', [UserController::class, 'index'])->name('dashboard.users');   
+        Route::get('/dashboard/edit/{id}', [UserController::class, 'edit']);   
+        Route::get('/dashboard/user-display', [UserController::class, 'display'])->name('dashboard.users.display');  
+        Route::put('/dashboard/user-update', [UserController::class, 'update'])->name('dashboard.users.update');    
+        Route::delete('/dashboard/user-delete', [UserController::class, 'delete'])->name('dashboard.users.delete');     
+        Route::post('/dashboard/user-save', [UserController::class, 'save'])->name('dashboard.save');    
+    });
+
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
