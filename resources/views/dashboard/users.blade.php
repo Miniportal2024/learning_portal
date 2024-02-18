@@ -58,10 +58,10 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".user-modal">
+                                <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".user-modal">
                                     <i class="fa-solid fa-add me-2"></i>Delete User/s
-                                </button>
-                                <button type="button" class="btn btn-success" onclick="showAddModal()">
+                                </button> -->
+                                <button type="button" class="btn btn-success" style="" onclick="showAddModal()">
                                     <i class="fa-solid fa-add me-2"></i>Add User
                                 </button>
                             </div>
@@ -84,6 +84,7 @@
 
         // for clearing error messages
         const showAddModal = () => {
+            clearErrorMessages()
             $('.add-user-modal').attr('hidden', false);
         }
 
@@ -94,10 +95,17 @@
 
         const clearErrorMessages = () => {
             $('#error_role').html('')
-            $('#error_fname').html('')
-            $('#error_lname').html('')
+            $('#error_name').html('')
+            $('#error_email').html('')
             $('#error_idnumber').html('')
             $('#error_pword').html('')
+
+
+            $('#error_edit_role').html('')
+            $('#error_edit_name').html('')
+            $('#error_edit_email').html('')
+            $('#error_edit_idnumber').html('')
+            $('#error_edit_pword').html('')
         }
 
         // for clearing inputs
@@ -108,7 +116,9 @@
             $('#password').val(''),
             $('#role').val('(Please select a role)')
 
-            $('#edit_fname').val(''),
+            $('#edit_name').val(''),
+            $('#edit_email').val(''),
+            $('#password').val(''),
             $('#edit_id_number').val(''),
             $('#edit_role').val('(Please select a role)')
         }
@@ -146,9 +156,9 @@
                 error: function(xhr, status, error) {
                     console.error('Request failed:', error);
                     $('#error_role').html(xhr.responseJSON.errors.role)
-                    $('#error_fname').html(xhr.responseJSON.errors.fname)
-                    $('#error_lname').html(xhr.responseJSON.errors.lname)
-                    $('#error_idnumber').html(xhr.responseJSON.errors.id)
+                    $('#error_name').html(xhr.responseJSON.errors.name)
+                    $('#error_email').html(xhr.responseJSON.errors.email)
+                    $('#error_idnumber').html(xhr.responseJSON.errors.id_number)
                     $('#error_pword').html(xhr.responseJSON.errors.password)
                 }
             });
@@ -219,7 +229,7 @@
                 user_id: $('#user_id').val(),
                 id_number: $('#edit_id_number').val(),
                 email: $('#edit_email').val(),
-                password: $('#password').val(),
+                password: $('#edit_password').val(),
                 role: $('#edit_role').val()
             };
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
@@ -240,15 +250,16 @@
                         $('.edit-user-modal').attr('hidden', true);
                         $("#datatable").html('')
                         displayUser()
+                    }else{
+                        $('#error_edit_role').html(response.error.role)
+                        $('#error_edit_name').html(response.error.name)
+                        $('#error_edit_email').html(response.error.email)
+                        $('#error_edit_idnumber').html(response.error.id_number)
+                        $('#error_edit_password').html(response.error.password)
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error('Request failed:', error);
-                    // $('#error_role').html(xhr.responseJSON.errors.role)
-                    // $('#error_fname').html(xhr.responseJSON.errors.fname)
-                    // $('#error_lname').html(xhr.responseJSON.errors.lname)
-                    // $('#error_idnumber').html(xhr.responseJSON.errors.id)
-                    // $('#error_pword').html(xhr.responseJSON.errors.password)
                 }
             });
         });
@@ -268,7 +279,7 @@
                 }).then((result) => {
                 if (result.value) {
                     $.ajax({
-                        url: '/dashboard/user-delete',
+                        url: '{{route('dashboard.users.delete')}}',
                         type: 'DELETE',
                         data: { id: id },
                         headers: {

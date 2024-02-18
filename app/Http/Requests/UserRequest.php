@@ -35,9 +35,11 @@ class UserRequest extends FormRequest
         return [
             'role.required' => 'Please select a role',
             'name.required' => 'The Name is required',
-            'id_number.required' => 'The Id-Number is required',
+            'id_number.required' => 'The ID-Number is required',
             'email.required' => 'The Email field is required.',
-            'password.required' => 'The password field is required.'
+            'password.required' => 'The password field is required.',
+            'password.min' => 'The password must be at least 8 characters.',
+            'email.email' => 'The Email is not valid email.'
         ];
     }
 }

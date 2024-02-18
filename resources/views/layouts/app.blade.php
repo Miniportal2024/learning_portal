@@ -312,6 +312,7 @@
     <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('assets/js/bootsnav.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/sweetalert.js')}}"></script>
     @yield('script')
 </body>
 </html>

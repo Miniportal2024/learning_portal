@@ -22,10 +22,10 @@ class UserController extends Controller
     public function save(UserRequest $request)
     {
         $user = User::create([
-            'name' => Str::upper($request->name),
+            'name'      => $request->name,
             'id_number' => $request->id_number,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'email'     => $request->email,
+            'password'  => Hash::make($request->password)
         ]);
         $user->assignRole($request->role);
         return response()->json(['message' => 'User Added Successfully', 'success' => true]);
@@ -84,6 +84,6 @@ class UserController extends Controller
     public function delete(Request $request)
     {
         User::whereid($request->id)->delete();
-        return response()->json();
+        return response()->json(['message' => 'User Deleted Successfully', 'success' => true]);
     }
 }

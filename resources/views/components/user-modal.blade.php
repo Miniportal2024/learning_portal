@@ -86,14 +86,16 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <div class="mb-3">
-                            <label class="text-label form-label" for="role">User Type</label>
-                            <input type="hidden" id="user_id">
-                            <select class="" id="role" placeholder="(Type of User)" required >
-                                <option selected disabled>(Type of User)</option>
-                                <option>Administrator</option>
-                                <option>Instructor</option>
-                                <option>Student</option>
-                            </select>
+                            <div>
+                                <label class="text-label form-label" for="role">User Type</label>
+                                <input type="hidden" id="user_id">
+                                <select class="" id="role" placeholder="(Type of User)" required >
+                                    <option selected disabled>(Type of User)</option>
+                                    <option>Administrator</option>
+                                    <option>Instructor</option>
+                                    <option>Student</option>
+                                </select>
+                            </div>
                             <span style="color: red" id="error_role"></span>
                         </div>
                     </div>
@@ -115,7 +117,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" onclick="closeModal()">Close</button>
-                <button type="button" class="btn btn-primary" id="save_user">Save changes</button>
+                <button type="button" class="btn btn-primary" id="save_user">Save</button>
             </div>
         </div>
     </div>
