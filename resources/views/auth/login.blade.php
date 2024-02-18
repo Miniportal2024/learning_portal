@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="padding: 10px; width: 100%;">
+<div class="container" style="padding: 10px; width: 100%; margin-bottom: 10%;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -48,7 +48,7 @@
                         </div>
                         <br>
                         <div class="row mb-0">
-                            <div class="col-md-4 offset-md-4">
+                            <div class="col-md-12">
                                 <button type="submit" style="font-size: 16px; border-radius: 10px;" class="btn btn-primary" > {{ __('Login') }}
                                 </button>
 

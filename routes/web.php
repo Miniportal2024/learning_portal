@@ -64,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard/user-display', [UserController::class, 'display'])->name('dashboard.users.display');  
         Route::put('/dashboard/user-update', [UserController::class, 'update'])->name('dashboard.users.update');    
         Route::delete('/dashboard/user-delete', [UserController::class, 'delete'])->name('dashboard.users.delete');     
-        Route::post('/dashboard/user-save', [UserController::class, 'save'])->name('dashboard.save');    
+        Route::post('/dashboard/user-save', [UserController::class, 'save'])->name('dashboard.user.save');    
     });
 
 });

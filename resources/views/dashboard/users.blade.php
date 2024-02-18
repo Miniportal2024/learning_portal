@@ -3,8 +3,8 @@
 @section('link')
     <link href="{{asset('vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
 @endsection
-@include('components.user-modal')
 @section('content')
+    @include('components.user-modal')
     <div class="content-body" style="padding: 30px; 50px">
         <div class="container-fluid">
             <div>
@@ -58,10 +58,10 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".add-user-modal">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".user-modal">
                                     <i class="fa-solid fa-add me-2"></i>Delete User/s
                                 </button>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target=".add-user-modal">
+                                <button type="button" class="btn btn-success" onclick="showAddModal()">
                                     <i class="fa-solid fa-add me-2"></i>Add User
                                 </button>
                             </div>
@@ -83,6 +83,15 @@
         // });
 
         // for clearing error messages
+        const showAddModal = () => {
+            $('.add-user-modal').attr('hidden', false);
+        }
+
+        const closeModal = () => {
+            $('.add-user-modal').attr('hidden', true);
+            $('.edit-user-modal').attr('hidden', true);
+        }
+
         const clearErrorMessages = () => {
             $('#error_role').html('')
             $('#error_fname').html('')
@@ -116,7 +125,7 @@
             };
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
-                url: '/dashboard/user-save',
+                url: '{{route('dashboard.user.save')}}',
                 type: 'POST',
                 data: postData,
                 headers: {
@@ -129,7 +138,7 @@
                         setTimeout(function() {
                             $('#success_alert').css('display', 'none');
                         }, 2000);
-                        $('.user_modal').modal('hide');
+                        $('.add-user-modal').attr('hidden', true);
                         $("#datatable").html('')
                         displayUser()
                     }
@@ -163,7 +172,7 @@
                             <td>${user.email}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="javascript:void(0)" onclick="edit_user(${user.id})" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target=".bd-update-modal-lg" style="border-radius: 5px; padding:5px;"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="javascript:void(0)" onclick="edit_user(${user.id})" class="btn btn-primary shadow btn-xs sharp me-1"" style="border-radius: 5px; padding:5px;"><i class="fas fa-pencil-alt"></i></a>
                                     <a href="javascript:void(0)" onclick="delete_user(${user.id})" class="btn btn-danger shadow btn-xs sharp" style="border-radius: 5px; padding:5px;"><i class="fa fa-trash"></i></a>
                                 </div>												
                             </td>
@@ -183,12 +192,12 @@
 
         // edit user
         const edit_user = (id) =>{
-            $('#edit_modal').modal('show');
             $.ajax({
-                url: '/dashboard/edit/' + id,
+                url: '/administrator/dashboard/edit/' + id,
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
+                    $('.edit-user-modal').attr('hidden', false);
                     $('#edit_name').val(response.name)
                     $('#edit_email').val(response.email)
                     $('#edit_id_number').val(response['id_number'])
@@ -215,7 +224,7 @@
             };
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
-                url: '/dashboard/user-update',
+                url: '{{route('dashboard.users.update')}}',
                 type: 'PUT',
                 data: postData,
                 headers: {
@@ -228,7 +237,7 @@
                         setTimeout(function() {
                             $('#edit_success_alert').css('display', 'none');
                         }, 2000);
-                        $('.edit_modal').modal('hide');
+                        $('.edit-user-modal').attr('hidden', true);
                         $("#datatable").html('')
                         displayUser()
                     }
