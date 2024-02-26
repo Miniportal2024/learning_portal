@@ -1,41 +1,52 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use App\Models\User;
-use Hash;
-use Illuminate\Support\Str;
-use App\Http\Requests\UserRequest;
+use App\Models\Quiz;
+use App\Http\Requests\QuizRequest;
+use App\Models\Course;
+use App\Models\Videos;
+// use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
-class UserController extends Controller
+class QuizController extends Controller
 {
-    public function index()
-    {
-        return view('dashboard.users');
+    public function index(){
+        $courses = Course::all();
+        return view('dashboard.quiz', compact('courses'));
     }
     public function display()
     {
-        $user = User::with('roles')->get();
-        return response()->json($user);
+        $quizzes = Quiz::all();
+        foreach($quizzes as $question){
+            $question->course_name          = Course::find($question->course_id)->name;
+            $question->after_video_name     = Videos::find($question->after_video_id)->title;
+        }
+        return response()->json($quizzes);
     }
-    public function save(UserRequest $request)
+    public function save(QuizRequest $request)
     {
         try {
-            $user = User::create([
-                'name'      => $request->name,
-                'id_number' => $request->id_number,
-                'email'     => $request->email,
-                'password'  => Hash::make($request->password)
+            Quiz::create([
+                'title'     =>  $request->title,
+                'course_id' =>  $request->course_id,
+                'after_video_id'  =>  $request->after_video_id,
+                'quiz_item' =>  $request->quiz_item,
+                'answer'    =>  $request->answer,
+                'question'  =>  $request->question,
+                'option1'   =>  $request->option1,
+                'option2'   =>  $request->option2,
+                'option3'   =>  $request->option3,
+                'option4'   =>  $request->option4,
             ]);
-            $user->assignRole($request->role);
-            return response()->json(['message' => 'User Added Successfully', 'success' => true]);
-        } catch (\Illuminate\Database\QueryException $e) {
+            return response()->json(['message' => 'Quiz Added Successfully', 'success' => true]);
+        } catch (Exception $e) {
             if ($e->errorInfo[1] == 1062) { // MySQL unique constraint violation error code
-                return response()->json(['message' => 'User Id is already registered', 'success' => false]);
+                return response()->json(['message' => 'Quiz is already registered', 'success' => false]);
             }
             // Handle other database-related exceptions if needed
-            return response()->json(['message' => 'Error creating user', 'success' => false]);
+            return response()->json(['message' => $e, 'success' => false]);
         }
         
     }

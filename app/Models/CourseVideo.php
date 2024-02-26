@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CourseResource extends Model
+class CourseVideo extends Model
 {
     use HasFactory;
-    protected $table="course_resources"; 
-    protected $fillable=['course_id', 'video_id', 'file_id', 'quiz_id'];
+    protected $table="course_video"; 
+    protected $fillable=['course_id', 'video_id'];
 }

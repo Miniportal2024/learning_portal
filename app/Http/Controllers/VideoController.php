@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Videos;
 use App\Models\Course;
+use App\Models\CourseVideo;
 
 class VideoController extends Controller
 {
@@ -29,5 +30,11 @@ class VideoController extends Controller
         $video = $video->toArray();
         // dd($video, $course, $list_of_videos);
         return view('pages.course-video', compact('video', 'course', 'list_of_videos'));
+    }
+    public function list(Request $request){
+        $video_ids = CourseVideo::where('course_id', $request->id)->get()->pluck('video_id');
+        $videos = Videos::whereIn('id', $video_ids)->get();
+        return json_encode($videos);
+    
     }
 }

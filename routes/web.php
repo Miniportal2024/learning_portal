@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\QuizController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,11 +57,18 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('/ui-alert', function () {return view('dashboard.ui-alert');});
         // Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert');});
 
-        Route::get('/dashboard/quizzes', [UserController::class, 'index'])->name('dashboard.quizzes');  
+        Route::get('/dashboard/quizzes', [QuizController::class, 'index'])->name('dashboard.quizzes');  
+        Route::get('/dashboard/edit/quiz/{id}', [QuizController::class, 'edit']);   
+        Route::get('/dashboard/quiz-display', [QuizController::class, 'display'])->name('dashboard.quizzes.display');  
+        Route::put('/dashboard/quiz-update', [QuizController::class, 'update'])->name('dashboard.quiz.update');    
+        Route::delete('/dashboard/quiz-delete', [QuizController::class, 'delete'])->name('dashboard.quiz.delete');     
+        Route::post('/dashboard/quiz-save', [QuizController::class, 'save'])->name('dashboard.quiz.save');
+        Route::post('/dashboard/video-list', [VideoController::class, 'list'])->name('dashboard.video.list');  
+
         Route::get('/dashboard/settings', [UserController::class, 'index'])->name('dashboard.settings');  
         // //User
         Route::get('/dashboard/users', [UserController::class, 'index'])->name('dashboard.users');   
-        Route::get('/dashboard/edit/{id}', [UserController::class, 'edit']);   
+        Route::get('/dashboard/user/edit/{id}', [UserController::class, 'edit']);   
         Route::get('/dashboard/user-display', [UserController::class, 'display'])->name('dashboard.users.display');  
         Route::put('/dashboard/user-update', [UserController::class, 'update'])->name('dashboard.users.update');    
         Route::delete('/dashboard/user-delete', [UserController::class, 'delete'])->name('dashboard.users.delete');     

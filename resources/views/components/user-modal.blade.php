@@ -1,6 +1,6 @@
 <div class="edit-user-modal" hidden>
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="user-modal-content">
             <div class="modal-body">
                 <div class="">
                     <h4 class="">Update User</h4>
@@ -62,7 +62,7 @@
 
 <div class="add-user-modal" hidden>
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="user-modal-content">
             <div class="modal-body">
                 <div class="">
                     <h4 class="">User Information</h4>

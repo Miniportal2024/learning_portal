@@ -172,6 +172,10 @@
                         <li>
                             <a href="{{route('dashboard.users')}}">Dashboard</a>
                         </li>
+
+                        <li>
+                            <a href="{{route('dashboard.quizzes')}}">Quizzes</a>
+                        </li>
                         @endrole
                     </ul>
                 </div>
@@ -201,12 +205,12 @@
 
                         <li>
                             <button style="border: none; background: none;" onclick="">
-                                <a aria-expanded="false">
+                                <a href="hakdog" aria-expanded="false">
                                     <div style="display: flex; gap: 1rem; margin-left: .3rem; {{request()->is(route('dashboard.users')) ? 'color: green;' : ''}}">
                                         <div>
                                             <i class="fa-solid fa-house"></i>
                                         </div>
-                                        <span class="nav-text" style="">User Accounts</span>
+                                        <span href="hakdog" class="nav-text" style="">User Accounts</span>
                                     </div>
                                 </a>
                             </button>
