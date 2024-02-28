@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     @include('components.quiz-modal')
-    <div class="content-body" style="padding: 30px; 50px">
+    <div class="content-body" style="height: 100vh; padding: 30px; 50px">
         <div class="container-fluid">
             <div>
                 <ul class="breadcrumb">
@@ -15,10 +15,8 @@
                 </ul>
             </div>
                                 
-            <div class="">
-
-                <div class="" style="width: 100%">
-                    <div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+            <div class="" style="width: 100%">
+                <div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
                     <div class="row">
                         <div class="alert alert-success alert-dismissible alert-alt fade" style="display: none;" id="success_alert" hidden>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
@@ -39,7 +37,7 @@
                                 <div class="" id="" style="color: black; border: 2px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); padding: 5px;">
                                     <div class="" id="bordered" role="tabpanel" aria-labelledby="home-tab-1">
                                         <div class="card-body">
-                                            <div class="table-responsive" style="min-height: 380px; max-height: 380px; padding: 10px;">
+                                            <div class="table-responsive" style="height: 60vh; padding: 10px;">
                                                 <table class="table table-responsive-md" style="text-align:center">
                                                     <thead>
                                                         <tr>
@@ -73,7 +71,6 @@
                             </div>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -82,8 +79,16 @@
     
 @section('script')
     <script>
-        $(document).on('change', '#course_id', function(){
-            let id = $('#course_id').val();
+        $(document).on('change', '#course_id, #edit_course_id', function(){
+            let id;
+            if(this.id == 'course_id'){
+                id = $('#course_id').val();
+                $('#after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
+            }else{
+                id = $('#edit_course_id').val();
+                $('#edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
+            }
+            select_id = this.id;
             let csrfToken = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 type    :   'POST',
@@ -95,11 +100,14 @@
                 },
                 success :   function(response){
                     var videos = JSON.parse(response);
+                    $('#after_video_id, #edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
+                    console.log(select_id);
                     videos.forEach(video => {
-                        var option = document.createElement('option');
-                        option.value = video.id;
-                        option.text = video.title;
-                        $('#after_video_id').add(option);
+                        if(select_id == 'course_id')
+                            $('#after_video_id').append($('<option>', {value: video.id, text: video.title}));
+                        else
+                            $('#edit_after_video_id').append($('<option>', {value: video.id, text: video.title}));
+                            
                     })
                 }
 
@@ -261,12 +269,25 @@
                 method: 'GET',
                 dataType: 'json',
                 success: function(response) {
+                    question = response.question;
+                    videos = response.videos;
+                    $('#quiz_id').val(question.id)
+                    $('#edit_title').val(question.title)
+                    $('#edit_course_id option:contains("'+question.course_name+'")').prop('selected', true);
+                    $('#edit_quiz_item').val(question.quiz_item)
+                    $('#edit_answer').val(question.answer)
+                    $('#edit_question').val(question.question)
+                    $('#edit_option1').val(question.option1)
+                    $('#edit_option2').val(question.option2)
+                    $('#edit_option3').val(question.option3)
+                    $('#edit_option4').val(question.option4)
+                    
+                    $.each(videos, function(id, video){
+                        console.log(video);
+                        $('#edit_after_video_id').append($('<option>', {value: id, text: video}));
+                    })
+                    $('#edit_after_video_id option:contains("'+question.after_video_name+'")').prop('selected', true);
                     $('.edit-quiz-modal').attr('hidden', false);
-                    $('#edit_name').val(response.name)
-                    $('#edit_email').val(response.email)
-                    $('#edit_id_number').val(response['id_number'])
-                    $('#edit_role').val(response.roles[0].name)
-                    $('#quiz_id').val(response.id)
                 },
                 error: function(error) {
                     console.error(error)
@@ -279,12 +300,17 @@
         $('#update_quiz').click(function() {
             clearErrorMessages()
             var postData = {
-                name: $('#edit_name').val(),
-                quiz_id: $('#quiz_id').val(),
-                id_number: $('#edit_id_number').val(),
-                email: $('#edit_email').val(),
-                password: $('#edit_password').val(),
-                role: $('#edit_role').val()
+                id:             $('#quiz_id').val(),
+                title:          $('#edit_title').val(),
+                course_id:      $('#edit_course_id').val(),
+                after_video_id: $('#edit_after_video_id').val(),
+                quiz_item:      $('#edit_quiz_item').val(),
+                answer:         $('#edit_answer').val(),
+                question:       $('#edit_question').val(),
+                option1:        $('#edit_option1').val(),
+                option2:        $('#edit_option2').val(),
+                option3:        $('#edit_option3').val(),
+                option4:        $('#edit_option4').val(),
             };
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
@@ -317,6 +343,17 @@
                         $('#error_edit_email').html(response.error.email)
                         $('#error_edit_idnumber').html(response.error.id_number)
                         $('#error_edit_password').html(response.error.password)
+
+                        $('#error_edit_title').html(response.error.title)
+                        $('#error_edit_course_id').html(response.error.course_id)
+                        $('#error_edit_after_video_id').html(response.error.after_video_id)
+                        $('#error_edit_quiz_item').html(response.error.quiz_item)
+                        $('#error_edit_answer').html(response.error.answer)
+                        $('#error_edit_question').html(response.error.question)
+                        $('#error_edit_option1').html(response.error.option1)
+                        $('#error_edit_option2').html(response.error.option2)
+                        $('#error_edit_option3').html(response.error.option3)
+                        $('#error_edit_option4').html(response.error.option4)
                     }
                 },
                 error: function(xhr, status, error) {

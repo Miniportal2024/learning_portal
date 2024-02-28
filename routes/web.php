@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert');});
 
         Route::get('/dashboard/quizzes', [QuizController::class, 'index'])->name('dashboard.quizzes');  
-        Route::get('/dashboard/edit/quiz/{id}', [QuizController::class, 'edit']);   
+        Route::get('/dashboard/quiz/edit/{id}', [QuizController::class, 'edit']);   
         Route::get('/dashboard/quiz-display', [QuizController::class, 'display'])->name('dashboard.quizzes.display');  
         Route::put('/dashboard/quiz-update', [QuizController::class, 'update'])->name('dashboard.quiz.update');    
         Route::delete('/dashboard/quiz-delete', [QuizController::class, 'delete'])->name('dashboard.quiz.delete');     

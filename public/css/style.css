@@ -1940,7 +1940,7 @@ body, .banner-area,
 
 
 /* Nice Select CSS */
-.nice-select {
+/* .nice-select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border: solid 1px #e8e8e8;
@@ -2133,7 +2133,7 @@ body, .banner-area,
 
 .no-csspointerevents .nice-select.open .list {
   display: block;
-}
+} */
 
 /* ============================================================== 
      # Register

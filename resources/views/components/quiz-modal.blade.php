@@ -8,27 +8,33 @@
                 <hr>
                 <br>
                 <div class="row">
-                    <div class="col-md-6 col-lg-6">
-                        <div class="mb-3">
-                            <label class="text-label form-label" for="edit_course_id">Course Name</label>
-                            <input type="hidden" id="quiz_id">
-                            <select class="" id="edit_course_id" placeholder="(Select Course Name)" required >
-                                <option selected disabled>(Select Course Name)</option>
-                                <option>Course 1</option>
-                            </select>
-                            <span style="color: red" id="error_edit_course_id"></span>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <label class="text-label form-label" for="edit_course_id">Course Name</label>
+                                <input type="hidden" id="quiz_id">
+                                <div class="mb-3">
+                                    <select class="" id="edit_course_id" style="width: 100%; padding: 10px; background: #fff; border: 1px solid #ccc" placeholder="(Select Course Name)" required >
+                                        <option selected disabled>(Select Course Name)</option>
+                                        @foreach($courses as $course)
+                                            <option value="{{$course->id}}" >{{$course->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                
+                                <span style="color: red" id="error_edit_course_id"></span>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                    <label class="text-label form-label" for="edit_after_video_id">After Video Name</label>
+                                <div class="mb-3">
+                                    <select class="text-label form-label" style="width: 100%; padding: 10px; background: #fff; border: 1px solid #ccc" id="edit_after_video_id" placeholder="(Select Video Name)" required >
+                                        <option selected disabled>(Select Video Name)</option>
+                                    </select>
+                                    <span style="color: red" id="error_edit_after_video_id"></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <div class="mb-3">
-                            <label class="text-label form-label" for="edit_after_video_id">After Video Name</label>
-                            <input type="hidden" id="quiz_id">
-                            <select class="" id="edit_after_video_id" placeholder="(Select Video Name)" required >
-                                <option selected disabled>(Select Video Name)</option>
-                                <option>Video 1</option>
-                            </select>
-                            <span style="color: red" id="error_edit_after_video_id"></span>
-                        </div>
+                        <br>
                     </div>
 
                     <div class="col-md-6 col-lg-6" style="margin-bottom: 10px;">
@@ -120,29 +126,35 @@
                 <hr>
                 <br>
                 <div class="row">
-                    <div class="col-md-6 col-lg-6">
-                        <div class="mb-3">
-                            <label class="text-label form-label" for="course_id">Course Name</label>
-                            <input type="hidden" id="quiz_id">
-                            <select class="" id="course_id" placeholder="(Select Course Name)" required >
-                                <option selected disabled>(Select Course Name)</option>
-                                @foreach($courses as $course)
-                                    <option value="{{$course->id}}" >{{$course->name}}</option>
-                                @endforeach
-                            </select>
-                            <span style="color: red" id="error_course_id"></span>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <label class="text-label form-label" for="course_id">Course Name</label>
+                                <input type="hidden" id="quiz_id">
+                                <div class="mb-3">
+                                    <select class="" id="course_id" style="width: 100%; padding: 10px; background: #fff; border: 1px solid #ccc" placeholder="(Select Course Name)" required >
+                                        <option selected disabled>(Select Course Name)</option>
+                                        @foreach($courses as $course)
+                                            <option value="{{$course->id}}" >{{$course->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                
+                                <span style="color: red" id="error_course_id"></span>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                    <label class="text-label form-label" for="after_video_id">After Video Name</label>
+                                <div class="mb-3">
+                                    <select class="text-label form-label" style="width: 100%; padding: 10px; background: #fff; border: 1px solid #ccc" id="after_video_id" placeholder="(Select Video Name)" required >
+                                        <option selected disabled>(Select Video Name)</option>
+                                    </select>
+                                    <span style="color: red" id="error_after_video_id"></span>
+                                </div>
+                            </div>
                         </div>
+                        <br>
                     </div>
-                    <div class="col-md-6 col-lg-6">
-                        <div class="mb-3">
-                            <label class="text-label form-label" for="after_video_id">After Video Name</label>
-                            <input type="hidden" id="quiz_id">
-                            <select class="" id="after_video_id" placeholder="(Select Video Name)" required >
-                                <option selected disabled>(Select Video Name)</option>
-                            </select>
-                            <span style="color: red" id="error_after_video_id"></span>
-                        </div>
-                    </div>
+                    
 
                     <div class="col-md-6 col-lg-6" style="margin-bottom: 10px;">
                         <div class="">

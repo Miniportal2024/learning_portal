@@ -9,11 +9,10 @@ use App\Models\Category;
 class CourseController extends Controller
 {
     public function display($id){
-        $category = Category::find($id);
-        $courses = $category->courses;
+        $course = Course::find($id);
+        // $courses = $category->courses;
         // $courses = $courses->find(1);
-        // dd($courses[0]);
-        return view('pages.courses', compact('courses'));
+        return view('pages.courses', compact('course'));
     }
     public function new_courses(){
         $courses = Course::where('state', 'new');

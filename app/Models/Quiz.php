@@ -21,4 +21,5 @@ class Quiz extends Model
         'option3',
         'option4'
     ];
+
 }
