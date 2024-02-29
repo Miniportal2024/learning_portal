@@ -9,10 +9,9 @@ use App\Models\Category;
 class CourseController extends Controller
 {
     public function display($id){
-        $course = Course::find($id);
-        // $courses = $category->courses;
-        // $courses = $courses->find(1);
-        return view('pages.courses', compact('course'));
+        $category = Category::find($id);
+        $courses = $category->courses;
+        return view('pages.courses', compact('courses'));
     }
     public function new_courses(){
         $courses = Course::where('state', 'new');
@@ -23,13 +22,15 @@ class CourseController extends Controller
         return view('pages.courses', compact('courses'));
     }
     public function select($id){
-        $suggested_courses = array();
-        $course = Course::where('id',$id)->first();
+        $course = Course::find($id);
         $category = $course->category->first();
-        //dd($course);
-        $suggested_categories = Category::all()->whereNotIn('id', [$category->id])->take(3);
-        $suggested_courses = $category->courses->take(5);
-        
+        $suggested_categories = Category::whereNotIn('id', [$category->id])->inRandomOrder()->limit(3)->get();
+        $suggested_courses = $category->courses;
+        if(count($suggested_courses) >= 5){
+            $suggested_courses = $category->courses->random(5);
+        }else{
+            $suggested_courses = $category->courses;
+        }
         return view('pages.course-details', compact('course','category', 'suggested_categories', 'suggested_courses'));
     }
 }

@@ -30,20 +30,25 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/new-courses', [CourseController::class, 'new_courses'])->name('new-courses');
     Route::get('/old-courses', [CourseController::class, 'old_courses'])->name('old-courses');
-    Route::get('/courses/{id}', [CourseController::class, 'display'])->name('courses');
+    // Route::get('/courses/{id}', [CourseController::class, 'display'])->name('courses');
+    Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
+
     Route::get('/category', [CategoryController::class, 'display'])->name('category');
+    Route::get('/category/{id}', [CategoryController::class, 'select'])->name('category.selected');
     // Route::get('/category', function () {return view('pages.courses-2');})->name('old-courses');
     //Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
-    Route::get('/course-details/{id}', [CourseController::class, 'select'])->name('course-details');
+
     Route::get('/course-video/{id}', [VideoController::class, 'select']);
     Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
+    Route::get('/videos', [VideoController::class, 'read'])->name('videos');
+    Route::get('/videos/update/user-video', [VideoController::class, 'update_user_video'])->name('update.user_video');
+
     Route::get('/developers', function () {return view('pages.developers');})->name('developers');
     Route::get('/teacher-details', function () {return view('pages.teacher-details');});
     Route::get('/index-onepage', function () {return view('pages.index-onepage');});
     Route::get('/event', function () {return view('pages.event');});
     Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
     Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
-    Route::get('/videos', [VideoController::class, 'read'])->name('videos');
 
 
     Route::middleware(['role:Administrator'])->prefix('administrator')->group(function () {

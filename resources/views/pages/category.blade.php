@@ -51,7 +51,7 @@
                                     </div>
                                     <h4 style="text-align: center;">{{$category->name}}</h4>
                                     <div class="bottom-info" style="display: flex; flex-direction: column; align-items: center;">
-                                        <a href="/courses/{{$category->id}}">More Details</a>
+                                        <a href="/category/{{$category->id}}">More Details</a>
                                     </div>
                                 </div>
                             </div>

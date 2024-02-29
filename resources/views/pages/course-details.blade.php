@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="info">
                                             <h4>
-                                                <a href="/courses/{{$course->id}}">{{$course->name}}</a>
+                                                <a href="/course-details/{{$course->id}}">{{$course->name}}</a>
                                             </h4>
                                             <div class="rating">
                                                 <i class="fas fa-star"></i>

@@ -18,7 +18,7 @@
                         <div class="top-info">
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <video style="width: 100%" controls controlsList="nodownload" src="{{asset('storage/'.$video['file_location'])}}"></video>
+                                <video class="video_loaded" id="{{$video['id']}}" style="width: 100%" controls controlsList="nodownload" src="{{asset('storage/'.$video['file_location'])}}"></video>
                             </div>
                             <!-- End Thumbnail -->
                             <br>
@@ -111,6 +111,7 @@
                                                                         
                                                                         <div class="item info">
                                                                             <a href="/course-video/view/{{$videos['id']}}" style="padding-left: 20px; padding-right: 20px;">View</a>
+                                                                            <!-- <a href="javascript:void(0)" {{($videos->is_locked) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($videos->is_locked) ? 'LOCKED' : 'VIEW'}}</a> -->
                                                                         </div>
                                                                     </li>
                                                                 @endforeach
@@ -134,5 +135,44 @@
         </div>
     </div>
     <!-- End Course Details -->
+
+@endsection
+
+@section('script')
+<script>
+    $(document).ready({
+        var video = $('.video_loaded')[0]; // Note the [0] to get the actual DOM element
+
+        // Generate a random completion percentage between 60 and 99
+        var randomPercentage = Math.floor(Math.random() * (99 - 60 + 1)) + 60;
+
+        // Add event listener for timeupdate
+        $(video).on('timeupdate', function () {
+            // Get the current time and duration of the video
+            var currentTime = video.currentTime;
+            var duration = video.duration;
+
+            // Calculate the percentage of completion
+            var completionPercentage = (currentTime / duration) * 100;
+
+            // Check if the video is at the random completion percentage
+            if (completionPercentage >= randomPercentage) {
+                console.log('Video is at ' + randomPercentage + '% completion');
+                $.ajax({
+                    url : '{{route('update.user_video')}}',
+                    headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
+                    type    : 'POST',
+                    data    : {video:video},
+                    error   : function(error){
+                        console.error(error);
+                    },
+                    success : function(response){
+                        console.log('Added');
+                    }
+                })
+            }
+        });
+    })
+</script>
 
 @endsection

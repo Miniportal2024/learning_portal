@@ -14,7 +14,7 @@ class Course extends Model
     protected $fillable = ['name', 'overview', 'description', 'state', 'number_of_videos','number_of_files', 'duration', 'instructor', 'img', 'file', 'rating'];
 
     public function videos(){
-        return $this->belongsToMany(Videos::class, 'course_resources', 'course_id', 'video_id');
+        return $this->belongsToMany(Videos::class, 'course_video', 'course_id', 'video_id');
     }
     public function category(){
         return $this->belongsToMany(Category::class, 'category_course', 'course_id');

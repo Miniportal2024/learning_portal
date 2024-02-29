@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Videos;
 use App\Models\Course;
 use App\Models\CourseVideo;
+use App\Models\UserVideo;
+use Auth;
 
 class VideoController extends Controller
 {
@@ -15,10 +17,20 @@ class VideoController extends Controller
         return view('pages.course-video', compact('videos'));
     }
     public function select($id){
+        $user_id = Auth::user()->id;
         $course = Course::find($id);
         $list_of_videos = $course->videos->sortBy('id');
-        $video = $list_of_videos->first()->toArray();
+        $video = $list_of_videos->shift();
         $course = $course->toArray();
+
+        $user_video = UserVideo::where('user_id', $user_id)->get()->pluck('video_id, is_locked')->toArray();
+        foreach($list_of_videos as $row){
+            if(in_array($row->id, $user_video)){
+                $row->is_locked = 0;
+            }else{
+                $row->is_locked = 1;
+            }
+        }
         // dd($video, $course, $list_of_videos);
         return view('pages.course-video', compact('video', 'course', 'list_of_videos'));
     }
@@ -36,5 +48,8 @@ class VideoController extends Controller
         $videos = Videos::whereIn('id', $video_ids)->get();
         return json_encode($videos);
     
+    }
+    public function update_user_video(Request $request){
+        // TO DO 
     }
 }
