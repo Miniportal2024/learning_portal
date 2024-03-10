@@ -18,7 +18,9 @@
                         <div class="top-info">
                             <!-- Thumbnail -->
                             <div class="thumb">
-                                <video class="video_loaded" id="{{$video['id']}}" style="width: 100%" controls controlsList="nodownload" src="{{asset('storage/'.$video['file_location'])}}"></video>
+                                <input type="hidden" name="" id="course_id" value="{{$course['id']}}">
+                                <input type="hidden" name="" id="video_id" value="{{$video['id']}}">
+                                <video id="video_loaded" style="width: 100%" controls controlsList="nodownload" src="{{asset('storage/'.$video['file_location'])}}"></video>
                             </div>
                             <!-- End Thumbnail -->
                             <br>
@@ -105,13 +107,13 @@
                                                                             </div>
                                                                             <div class="item name">
                                                                                 <i class="fas fa-play"></i>
-                                                                                <span>Lecture {{$counter++}}: {{$duration[0]}} hours {{$duration[1]}} min @if(count($duration) > 2) {{$duration[2]}}.' sec' @endif </span>
+                                                                                <span>Lecture {{$counter}}: {{$duration[0]}} hours {{$duration[1]}} min @if(count($duration) > 2) {{$duration[2]}}.' sec' @endif </span>
                                                                             </div>
                                                                         </div>
                                                                         
                                                                         <div class="item info">
-                                                                            <a href="/course-video/view/{{$videos['id']}}" style="padding-left: 20px; padding-right: 20px;">View</a>
-                                                                            <!-- <a href="javascript:void(0)" {{($videos->is_locked) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($videos->is_locked) ? 'LOCKED' : 'VIEW'}}</a> -->
+                                                                            <!-- <a href="}}" style="padding-left: 20px; padding-right: 20px;">View</a> -->
+                                                                            <a href="{{($counter <= $level) ? '/course-video/view/'.$videos->id : 'javascript:void(0)'}}" {{($counter <= $level) ? '' : 'disabled'}} style="padding-left: 20px; padding-right: 20px;">{{($counter++ <= $level) ? 'VIEW' : 'LOCKED'}}</a>
                                                                         </div>
                                                                     </li>
                                                                 @endforeach
@@ -140,29 +142,41 @@
 
 @section('script')
 <script>
-    $(document).ready({
-        var video = $('.video_loaded')[0]; // Note the [0] to get the actual DOM element
 
-        // Generate a random completion percentage between 60 and 99
+    $(document).ready(function(){
         var randomPercentage = Math.floor(Math.random() * (99 - 60 + 1)) + 60;
 
-        // Add event listener for timeupdate
-        $(video).on('timeupdate', function () {
-            // Get the current time and duration of the video
-            var currentTime = video.currentTime;
-            var duration = video.duration;
+        // var course_id = $('#course_id').val();
+        // var video_id = $('#video_id').val();
+        //         $.ajax({
+        //             url : '{{route('update.user_video')}}',
+        //             headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
+        //             type    : 'POST',
+        //             data    : {course_id:course_id, video_id:video_id},
+        //             error   : function(error){
+        //                 console.error(error);
+        //             },
+        //             success : function(response){
+        //                 console.log('Added');
+        //             }
+        //         })
+        $('#video_loaded').on('timeupdate', function () {
+            var currentTime = this.currentTime;
+            var duration = this.duration;
 
-            // Calculate the percentage of completion
             var completionPercentage = (currentTime / duration) * 100;
+            console.log(completionPercentage);
+            console.log('Video is at ' + randomPercentage + '% completion', this.id);
 
-            // Check if the video is at the random completion percentage
+
             if (completionPercentage >= randomPercentage) {
-                console.log('Video is at ' + randomPercentage + '% completion');
+                var course_id = $('#course_id').val();
+                var video_id = $('#video_id').val();
                 $.ajax({
                     url : '{{route('update.user_video')}}',
                     headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
                     type    : 'POST',
-                    data    : {video:video},
+                    data    : {course_id:course_id, video_id:video_id},
                     error   : function(error){
                         console.error(error);
                     },

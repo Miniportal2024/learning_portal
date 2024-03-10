@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('user_video', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('video_id');
-            $table->boolean('is_locked');
+            $table->unsignedBigInteger('course_id');
+            $table->integer('video_id');
+            $table->integer('level');
         });
     }
 

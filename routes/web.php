@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/course-video/{id}', [VideoController::class, 'select']);
     Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
     Route::get('/videos', [VideoController::class, 'read'])->name('videos');
-    Route::get('/videos/update/user-video', [VideoController::class, 'update_user_video'])->name('update.user_video');
+    Route::post('/videos/update/user-video', [VideoController::class, 'update_user_video'])->name('update.user_video');
 
     Route::get('/developers', function () {return view('pages.developers');})->name('developers');
     Route::get('/teacher-details', function () {return view('pages.teacher-details');});
