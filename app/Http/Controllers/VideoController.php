@@ -7,6 +7,7 @@ use App\Models\Videos;
 use App\Models\Course;
 use App\Models\CourseVideo;
 use App\Models\UserVideo;
+use App\Models\Quiz;
 use Auth;
 
 class VideoController extends Controller
@@ -21,24 +22,25 @@ class VideoController extends Controller
         $course = Course::find($id);
         $list_of_videos = $course->videos->sortBy('id');
         $video = $list_of_videos->shift();
-        $course = $course->toArray();
 
-        $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course['id'])->get()->pluck('level');
+        $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course->id)->get()->pluck('level');
         $level = (count($user_video) <= 0) ? 0 : $user_video->first();
-
-        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level'));
+        $questions = count(Quiz::where('course_id', $course->id)->get());
+        $course = $course->toArray();
+        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'questions'));
     }
     public function view($id){
         $user_id = Auth::user()->id;
         $video = Videos::find($id);
         $course = $video->course->first();
         $list_of_videos = $course->videos->sortBy('id');
-        $course = $course->toArray();
         $video = $video->toArray();
-        $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course['id'])->get()->pluck('level');
+        $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course->id)->get()->pluck('level');
         $level = (count($user_video) <= 0) ? 0 : $user_video->first();
+        $questions = count(Quiz::where('course_id', $course->id)->get());
+        $course = $course->toArray();
 
-        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level'));
+        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'questions'));
     }
     public function list(Request $request){
         $video_ids = CourseVideo::where('course_id', $request->id)->get()->pluck('video_id');
@@ -54,7 +56,7 @@ class VideoController extends Controller
         $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course_id);
         if($user_video->exists()){
             $isGreater = $user_video->pluck('video_id')->first();
-            if($isGreater > $video_id){
+            if($video_id > $isGreater){
                 $level = $user_video->pluck('level')->first();
                 $user_video->update(['video_id'  => (int) $video_id, 'level' => $level+1]);
             }else{

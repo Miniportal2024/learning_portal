@@ -111,12 +111,45 @@
                                                                             </div>
                                                                         </div>
                                                                         
+                                                                        @role('Student')
                                                                         <div class="item info">
-                                                                            <!-- <a href="}}" style="padding-left: 20px; padding-right: 20px;">View</a> -->
                                                                             <a href="{{($counter <= $level) ? '/course-video/view/'.$videos->id : 'javascript:void(0)'}}" {{($counter <= $level) ? '' : 'disabled'}} style="padding-left: 20px; padding-right: 20px;">{{($counter++ <= $level) ? 'VIEW' : 'LOCKED'}}</a>
                                                                         </div>
+                                                                        @endrole
+
+                                                                        @role(['Instructor', 'Administrator'])
+                                                                        <div class="item info">
+                                                                            <a href="/course-video/view/'.{{$videos->id}}" style="padding-left: 20px; padding-right: 20px;">VIEW</a>
+                                                                        </div>
+                                                                        @endrole
+                                                                        
                                                                     </li>
                                                                 @endforeach
+
+
+                                                                <li>
+                                                                        <div class="quiz-info" style="display: flex; flex-direction: column">
+                                                                            <div class="item title" style="display: flex; flex-direction: row">
+                                                                            <span><strong>Final:</strong> &nbsp;Chapter Quiz</span>
+                                                                            </div>
+                                                                            <div class="item name">
+                                                                                <i class="fas fa-play"></i>
+                                                                                <span>Quiz item: {{$questions}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        @role('Student')
+                                                                        <div class="item info">
+                                                                            <a href="{{($counter <= $level) ? '/quiz/'.$course['id'] : 'javascript:void(0)'}}" {{($level >= $counter) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($level >= $counter) ? 'VIEW' : 'LOCKED'}}</a>
+                                                                        </div>
+                                                                        @endrole
+
+                                                                        @role(['Instructor', 'Administrator'])
+                                                                        <div class="item info">
+                                                                            <a href="/quiz/'.{{$course['id']}}" style="padding-left: 20px; padding-right: 20px;">VIEW</a>
+                                                                        </div>
+                                                                        @endrole
+                                                                        
+                                                                    </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -145,7 +178,7 @@
 
     $(document).ready(function(){
         var randomPercentage = Math.floor(Math.random() * (99 - 60 + 1)) + 60;
-
+        var keep = true;
         // var course_id = $('#course_id').val();
         // var video_id = $('#video_id').val();
         //         $.ajax({
@@ -164,12 +197,12 @@
             var currentTime = this.currentTime;
             var duration = this.duration;
 
-            var completionPercentage = (currentTime / duration) * 100;
+            var completionPercentage = parseInt((currentTime / duration) * 100);
             console.log(completionPercentage);
             console.log('Video is at ' + randomPercentage + '% completion', this.id);
 
 
-            if (completionPercentage >= randomPercentage) {
+            if (completionPercentage == randomPercentage && keep) {
                 var course_id = $('#course_id').val();
                 var video_id = $('#video_id').val();
                 $.ajax({
@@ -182,6 +215,7 @@
                     },
                     success : function(response){
                         console.log('Added');
+                        keep = false;
                     }
                 })
             }
