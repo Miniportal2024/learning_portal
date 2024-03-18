@@ -22,10 +22,7 @@ class QuizRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'     => 'required',
             'course_id' => 'required',
-            'after_video_id'  => 'required',
-            'quiz_item' => 'required|numeric',
             'answer'    => 'required',
             'question'  => 'required',
             'option1'   => 'required',
@@ -39,7 +36,6 @@ class QuizRequest extends FormRequest
     {
         return [
             'course_id.required' => 'Please select a course name',
-            'video_id.required'  => 'Please select a video name',
             'quiz_item.decimal' => 'Please enter a number',
         ];
     }

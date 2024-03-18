@@ -187,47 +187,9 @@
                 <div class="widget">
                     <h4 class="title">Users Pages</h4>
                     <div class="profile-thumb">
-                        <img src="{{ asset('assets/img/team/7.jpg') }}" alt="Profile">
+                        <img src="{{ asset('images/avatar/avatar.png') }}" alt="Profile">
                     </div>
                     <ul>
-                        <li>
-                            <button style="border: none; background: none;" onclick="">
-                                <a aria-expanded="false">
-                                    <div style="display: flex; gap: 1rem; margin-left: .3rem; {{request()->is(route('dashboard.quizzes')) ? 'color: green;' : ''}}">
-                                        <div>
-                                            <i class="fa-solid fa-house"></i>
-                                        </div>
-                                        <span class="nav-text" style="">Add Quizzes</span>
-                                    </div>
-                                </a>
-                            </button>
-                        </li>
-
-                        <li>
-                            <button style="border: none; background: none;" onclick="">
-                                <a href="hakdog" aria-expanded="false">
-                                    <div style="display: flex; gap: 1rem; margin-left: .3rem; {{request()->is(route('dashboard.users')) ? 'color: green;' : ''}}">
-                                        <div>
-                                            <i class="fa-solid fa-house"></i>
-                                        </div>
-                                        <span href="hakdog" class="nav-text" style="">User Accounts</span>
-                                    </div>
-                                </a>
-                            </button>
-                        </li>
-
-                        <li>
-                            <button style="border: none; background: none;">
-                                <a aria-expanded="false">
-                                    <div style="display: flex; gap: 1rem; margin-left: .3rem; {{request()->is(route('dashboard.settings')) ? 'color: green;' : ''}}">
-                                        <div>
-                                            <i class="fa-solid fa-gear"></i>
-                                        </div>
-                                        <span class="nav-text">Settings</span>
-                                    </div>
-                                </a>
-                            </button>
-                        </li>
                         <li>
                             <form style="border: none; background: none;" action="{{ route('user.logout') }}" method="POST">
                                 @csrf
@@ -243,30 +205,9 @@
                         </li>
                     </ul>
                 </div>
-                <!-- <div class="widget">
-                    <h4 class="title">Additional Links</h4>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Rating</a></li>
-                        <li><a href="#">Popular Courses</a></li>
-                    </ul>
-                </div>
-                <div class="widget social">
-                    <h4 class="title">Connect With Us</h4>
-                    <ul class="link">
-                        <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                        <li class="dribbble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                    </ul>
-                </div> -->
             </div>
-            <!-- End Side Menu -->
 
         </nav>
-        <!-- End Navigation -->
 
     </header>
     @yield('content')

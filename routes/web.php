@@ -50,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
     Route::get('/about-us', function () {return view('pages.about-us');})->name('about-us');
 
+    Route::get('/quiz/{id}', [QuizController::class, 'index'])->name('quiz.list');
+    Route::post('/quiz/check', [QuizController::class, 'check'])->name('quiz.check');
 
     Route::middleware(['role:Administrator'])->prefix('administrator')->group(function () {
 
@@ -62,13 +64,14 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('/ui-alert', function () {return view('dashboard.ui-alert');});
         // Route::get('/uc-sweetalert', function () {return view('dashboard.uc-sweetalert');});
 
-        Route::get('/dashboard/quizzes', [QuizController::class, 'index'])->name('dashboard.quizzes');  
+        Route::get('/dashboard/quizzes', [QuizController::class, 'list'])->name('dashboard.quizzes');  
         Route::get('/dashboard/quiz/edit/{id}', [QuizController::class, 'edit']);   
         Route::get('/dashboard/quiz-display', [QuizController::class, 'display'])->name('dashboard.quizzes.display');  
         Route::put('/dashboard/quiz-update', [QuizController::class, 'update'])->name('dashboard.quiz.update');    
         Route::delete('/dashboard/quiz-delete', [QuizController::class, 'delete'])->name('dashboard.quiz.delete');     
         Route::post('/dashboard/quiz-save', [QuizController::class, 'save'])->name('dashboard.quiz.save');
         Route::post('/dashboard/video-list', [VideoController::class, 'list'])->name('dashboard.video.list');  
+
 
         Route::get('/dashboard/settings', [UserController::class, 'index'])->name('dashboard.settings');  
         // //User

@@ -15,7 +15,8 @@ class CourseController extends Controller
     }
     public function new_courses(){
         $courses = Course::where('state', 'new');
-        return view('pages.new-courses', compact('courses'));
+        return view('pages.courses', compact('courses'));
+        // return view('pages.new-courses', compact('courses'));
     }
     public function old_courses(){
         $courses = Course::where('state', 'old')->get();

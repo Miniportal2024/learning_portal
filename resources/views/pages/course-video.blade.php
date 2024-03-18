@@ -128,28 +128,28 @@
 
 
                                                                 <li>
-                                                                        <div class="quiz-info" style="display: flex; flex-direction: column">
-                                                                            <div class="item title" style="display: flex; flex-direction: row">
-                                                                            <span><strong>Final:</strong> &nbsp;Chapter Quiz</span>
-                                                                            </div>
-                                                                            <div class="item name">
-                                                                                <i class="fas fa-play"></i>
-                                                                                <span>Quiz item: {{$questions}}</span>
-                                                                            </div>
+                                                                    <div class="quiz-info" style="display: flex; flex-direction: column">
+                                                                        <div class="item title" style="display: flex; flex-direction: row">
+                                                                        <span><strong>Final:</strong> &nbsp;Chapter Quiz</span>
                                                                         </div>
-                                                                        @role('Student')
-                                                                        <div class="item info">
-                                                                            <a href="{{($counter <= $level) ? '/quiz/'.$course['id'] : 'javascript:void(0)'}}" {{($level >= $counter) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($level >= $counter) ? 'VIEW' : 'LOCKED'}}</a>
+                                                                        <div class="item name">
+                                                                            <i class="fas fa-play"></i>
+                                                                            <span>Quiz item: {{$questions}}</span>
                                                                         </div>
-                                                                        @endrole
+                                                                    </div>
+                                                                    @role('Student')
+                                                                    <div class="item info">
+                                                                        <a href="{{($counter <= $level) ? '/quiz/'.$course['id'] : 'javascript:void(0)'}}" {{($level >= $counter) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($level >= $counter) ? 'VIEW' : 'LOCKED'}}</a>
+                                                                    </div>
+                                                                    @endrole
 
-                                                                        @role(['Instructor', 'Administrator'])
-                                                                        <div class="item info">
-                                                                            <a href="/quiz/'.{{$course['id']}}" style="padding-left: 20px; padding-right: 20px;">VIEW</a>
-                                                                        </div>
-                                                                        @endrole
-                                                                        
-                                                                    </li>
+                                                                    @role(['Instructor', 'Administrator'])
+                                                                    <div class="item info">
+                                                                        <a href="/quiz/{{$course['id']}}" style="padding-left: 20px; padding-right: 20px;">START QUIZ</a>
+                                                                    </div>
+                                                                    @endrole
+                                                                    
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>

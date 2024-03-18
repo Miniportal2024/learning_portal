@@ -13,34 +13,29 @@ return new class extends Migration
     {
         Schema::create('quiz', function (Blueprint $table) {
             $table->BigIncrements('id');
-            $table->string('title');
             $table->unsignedBigInteger('course_id');
-            $table->unsignedBigInteger('after_video_id');
-            $table->integer('quiz_item');
             $table->string('question');
             $table->string('option1');
             $table->string('option2');
             $table->string('option3');
             $table->string('option4');
             $table->string('answer');
-            $table->string('explanation')->nullable();
+            $table->string('title')->nullable();
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-            $table->foreign('after_video_id')->references('id')->on('videos')->onDelete('cascade');
             $table->timestamps();
         });
         Schema::create('quiz_score', function (Blueprint $table) {
-            $table->primary(['user_id', 'quiz_id']);
+            $table->BigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('quiz_id');
+            $table->unsignedBigInteger('course_id');
             $table->integer('score');
-            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->foreign('quiz_id')
+            $table->foreign('course_id')
                 ->references('id')
                 ->on('quiz')
                 ->onDelete('cascade');
