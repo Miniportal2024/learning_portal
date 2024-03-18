@@ -41,16 +41,14 @@
                                                 <table class="table table-responsive-md" style="text-align:center">
                                                     <thead>
                                                         <tr>
-                                                            <th style="text-align:center"><strong>Title</strong></th>
                                                             <th style="text-align:center"><strong>Course Name</strong></th>
-                                                            <th style="text-align:center"><strong>After Video Name</strong></th>
-                                                            <th style="text-align:center"><strong>Quiz Item</strong></th>
                                                             <th style="text-align:center"><strong>Question</strong></th>
                                                             <th style="text-align:center"><strong>Option 1</strong></th>
                                                             <th style="text-align:center"><strong>Option 2</strong></th>
                                                             <th style="text-align:center"><strong>Option 3</strong></th>
                                                             <th style="text-align:center"><strong>Option 4</strong></th>
                                                             <th style="text-align:center"><strong>Answer</strong></th>
+                                                            <th style="text-align:center"><strong>Answer Explanation</strong></th>
                                                             <th style="text-align:center"><strong>Action</strong></th>
                                                         </tr>
                                                     </thead>
@@ -79,40 +77,39 @@
     
 @section('script')
     <script>
-        $(document).on('change', '#course_id, #edit_course_id', function(){
-            let id;
-            if(this.id == 'course_id'){
-                id = $('#course_id').val();
-                $('#after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
-            }else{
-                id = $('#edit_course_id').val();
-                $('#edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
-            }
-            select_id = this.id;
-            let csrfToken = $('meta[name="csrf-token"]').attr('content');
-            $.ajax({
-                type    :   'POST',
-                url     :   '{{route('dashboard.video.list')}}',
-                headers :   {'X-CSRF-TOKEN' : csrfToken},
-                data    :   {id:id},
-                error   :   function(error){
+        // $(document).on('change', '#course_id, #edit_course_id', function(){
+        //     let id;
+        //     if(this.id == 'course_id'){
+        //         id = $('#course_id').val();
+        //     }else{
+        //         id = $('#edit_course_id').val();
+        //         $('#edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
+        //     }
+        //     select_id = this.id;
+        //     let csrfToken = $('meta[name="csrf-token"]').attr('content');
+        //     $.ajax({
+        //         type    :   'POST',
+        //         url     :   '{{route('dashboard.video.list')}}',
+        //         headers :   {'X-CSRF-TOKEN' : csrfToken},
+        //         data    :   {id:id},
+        //         error   :   function(error){
 
-                },
-                success :   function(response){
-                    var videos = JSON.parse(response);
-                    $('#after_video_id, #edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
-                    console.log(select_id);
-                    videos.forEach(video => {
-                        if(select_id == 'course_id')
-                            $('#after_video_id').append($('<option>', {value: video.id, text: video.title}));
-                        else
-                            $('#edit_after_video_id').append($('<option>', {value: video.id, text: video.title}));
+        //         },
+        //         success :   function(response){
+        //             var videos = JSON.parse(response);
+        //             $('#after_video_id, #edit_after_video_id').html('').append($('<option>', {selected: true, disabled:true, text: '(Select Video Name)'}));
+        //             console.log(select_id);
+        //             videos.forEach(video => {
+        //                 if(select_id == 'course_id')
+        //                     $('#after_video_id').append($('<option>', {value: video.id, text: video.title}));
+        //                 else
+        //                     $('#edit_after_video_id').append($('<option>', {value: video.id, text: video.title}));
                             
-                    })
-                }
+        //             })
+        //         }
 
-            })
-        })
+        //     })
+        // })
         const showAddModal = () => {
             clearErrorMessages()
             $('.add-quiz-modal').attr('hidden', false);
@@ -126,8 +123,6 @@
         const clearErrorMessages = () => {
             $('#error_title').html('')
             $('#error_course_id').html('')
-            $('#error_after_video_id').html('')
-            $('#error_quiz_item').html('')
             $('#error_answer').html('')
             $('#error_question').html('')
             $('#error_option1').html('')
@@ -137,8 +132,6 @@
 
             $('#error_edit_title').html('')
             $('#error_edit_course_id').html('')
-            $('#error_edit_after_video_id').html('')
-            $('#error_edit_quiz_item').html('')
             $('#error_edit_answer').html('')
             $('#error_edit_question').html('')
             $('#error_edit_option1').html('')
@@ -151,8 +144,6 @@
         const clearInput = () => {
             $('#title').val('')
             $('#course_id').val('(Select Course Name)')
-            $('#after_video_id').val('(Select Video Name)')
-            $('#quiz_item').val('')
             $('#answer').val('')
             $('#question').val('')
             $('#option1').val('')
@@ -162,8 +153,6 @@
 
             $('#edit_title').val('')
             $('#edit_course_id').val('(Select Course Name)')
-            $('#edit_after_video_id').val('(Select Video Name)')
-            $('#edit_quiz_item').val('')
             $('#edit_answer').val('')
             $('#edit_question').val('')
             $('#edit_option1').val('')
@@ -178,8 +167,6 @@
             var postData = {
                 title:      $('#title').val(),
                 course_id:  $('#course_id').val(),
-                after_video_id:   $('#after_video_id').val(),
-                quiz_item:  $('#quiz_item').val(),
                 answer:     $('#answer').val(),
                 question:   $('#question').val(),
                 option1:    $('#option1').val(),
@@ -236,16 +223,14 @@
                     response.forEach(quiz => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
-                            <td style="white-space: nowrap;">${quiz.title}</td>
                             <td style="white-space: nowrap;">${quiz.course_name}</td>
-                            <td style="white-space: nowrap;">${quiz.after_video_name}</td>
-                            <td>${quiz.quiz_item}</td>
                             <td style="white-space: nowrap;">${quiz.question}</td>
                             <td style="white-space: nowrap;">${quiz.option1}</td>
                             <td style="white-space: nowrap;">${quiz.option2}</td>
                             <td style="white-space: nowrap;">${quiz.option3}</td>
                             <td style="white-space: nowrap;">${quiz.option4}</td>
                             <td>${quiz.answer}</td>
+                            <td style="white-space: nowrap;">${quiz.title}</td>
                             <td>
                                 <div class="d-flex">
                                     <a href="javascript:void(0)" onclick="edit_quiz(${quiz.id})" class="btn btn-primary shadow btn-xs sharp me-1"" style="border-radius: 5px; padding:5px;"><i class="fas fa-pencil-alt"></i></a>
@@ -270,23 +255,15 @@
                 dataType: 'json',
                 success: function(response) {
                     question = response.question;
-                    videos = response.videos;
                     $('#quiz_id').val(question.id)
                     $('#edit_title').val(question.title)
                     $('#edit_course_id option:contains("'+question.course_name+'")').prop('selected', true);
-                    $('#edit_quiz_item').val(question.quiz_item)
                     $('#edit_answer').val(question.answer)
                     $('#edit_question').val(question.question)
                     $('#edit_option1').val(question.option1)
                     $('#edit_option2').val(question.option2)
                     $('#edit_option3').val(question.option3)
                     $('#edit_option4').val(question.option4)
-                    
-                    $.each(videos, function(id, video){
-                        console.log(video);
-                        $('#edit_after_video_id').append($('<option>', {value: id, text: video}));
-                    })
-                    $('#edit_after_video_id option:contains("'+question.after_video_name+'")').prop('selected', true);
                     $('.edit-quiz-modal').attr('hidden', false);
                 },
                 error: function(error) {
@@ -303,8 +280,6 @@
                 id:             $('#quiz_id').val(),
                 title:          $('#edit_title').val(),
                 course_id:      $('#edit_course_id').val(),
-                after_video_id: $('#edit_after_video_id').val(),
-                quiz_item:      $('#edit_quiz_item').val(),
                 answer:         $('#edit_answer').val(),
                 question:       $('#edit_question').val(),
                 option1:        $('#edit_option1').val(),
@@ -346,8 +321,6 @@
 
                         $('#error_edit_title').html(response.error.title)
                         $('#error_edit_course_id').html(response.error.course_id)
-                        $('#error_edit_after_video_id').html(response.error.after_video_id)
-                        $('#error_edit_quiz_item').html(response.error.quiz_item)
                         $('#error_edit_answer').html(response.error.answer)
                         $('#error_edit_question').html(response.error.question)
                         $('#error_edit_option1').html(response.error.option1)
