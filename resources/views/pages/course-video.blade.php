@@ -105,10 +105,7 @@
                                                                             <div class="item title" style="display: flex; flex-direction: row">
                                                                             <span><strong>Title:</strong> &nbsp;{{$videos->title}}</span>
                                                                             </div>
-                                                                            <div class="item name">
-                                                                                <i class="fas fa-play"></i>
-                                                                                <span>Lecture {{$counter}}: {{$duration[0]}} hours {{$duration[1]}} min @if(count($duration) > 2) {{$duration[2]}}.' sec' @endif </span>
-                                                                            </div>
+                                                                           
                                                                         </div>
                                                                         
                                                                         @role('Student')
@@ -119,7 +116,7 @@
 
                                                                         @role(['Instructor', 'Administrator'])
                                                                         <div class="item info">
-                                                                            <a href="/course-video/view/'.{{$videos->id}}" style="padding-left: 20px; padding-right: 20px;">VIEW</a>
+                                                                            <a href="/course-video/view/{{$videos->id}}" style="padding-left: 20px; padding-right: 20px;">VIEW</a>
                                                                         </div>
                                                                         @endrole
                                                                         
