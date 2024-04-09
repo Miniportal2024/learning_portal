@@ -84,9 +84,7 @@
                 <div class="col-md-6 content">
                     <div class="site-heading text-left">
                         <h2>Learn, Grow, Succeed</h2>
-                        <p>
-                            Discourse assurance estimable applauded to so. Him everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating excellence an to impression. 
-                        </p>
+                       
                     </div>
 
                     <!-- item -->
@@ -95,11 +93,11 @@
                             <i class="flaticon-trending"></i>
                         </div>
                         <div class="info">
-                            <h4>
-                                <a href="#">Trending Courses</a>
-                            </h4>
                             <p>
-                                Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.
+                                <h3>Courses</h3>
+                            </p>
+                            <p>
+                                Explore diverse courses for all interests and skill levels on our virtual learning platform, designed to help you succeed academically and professionally.
                             </p>
                         </div>
                     </div>
@@ -111,11 +109,11 @@
                             <i class="flaticon-books"></i>
                         </div>
                         <div class="info">
-                            <h4>
-                                <a href="#">Books & Library</a>
-                            </h4>
                             <p>
-                                Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.
+                                 <h3>Knowledge Hub</h3>
+                            </p>
+                            <p>
+                            Discover a range of useful resources. Watch videos, complete quizzes, and acquire new knowledge to aid your learning journey.
                             </p>
                         </div>
                     </div>
@@ -127,11 +125,11 @@
                             <i class="flaticon-professor"></i>
                         </div>
                         <div class="info">
-                            <h4>
-                                <a href="#">Certified Teachers</a>
-                            </h4>
+                           <p>
+                                 <h3>Certified Instructors</h3>
+                            </p>
                             <p>
-                                Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.
+                            Our Virtual Learning Portal offers a wide range of courses taught by certified instructors from top educational platforms from Udemy and INE.
                             </p>
                         </div>
                     </div>
@@ -151,9 +149,7 @@
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
                         <h2>DEVELOPERS</h2>
-                        <p>
-                            Virtual Learning Portal for Industry certification
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -164,7 +160,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/johns.jpg" alt="Thumb">  
+                                <img src="assets/img/advisor/johns.jpeg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>johns cae A. macaraeg</h4>
                                     <span>Computer Engineering Student</span>
@@ -188,7 +184,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/car.jpg" alt="Thumb">  
+                                <img src="assets/img/advisor/maricar.jpeg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>Maricar H. Millon</h4>
                                     <span>Computer Engineering Student</span>
@@ -212,7 +208,7 @@
                         <!-- Single Item -->
                         <div class="advisor-item">
                             <div class="info-box">
-                                <img src="assets/img/advisor/loyd.jpeg" alt="Thumb">  
+                                <img src="assets/img/advisor/lloyd.jpeg" alt="Thumb">  
                                 <div class="info-title">
                                     <h4>John Lloyd De Guzman</h4>
                                     <span>Computer Engineering Student</span>

@@ -97,20 +97,7 @@
         <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
 
             <!-- Start Top Search -->
-            <div class="container">
-                <div class="row">
-                    <div class="top-search">
-                        <div class="input-group">
-                            <form action="#">
-                                <input type="text" name="text" class="form-control" placeholder="Search">
-                                <button type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>  
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <!-- End Top Search -->
 
             <div class="container">
@@ -118,7 +105,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        
                         <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
                         @if (request()->is('login'))
                             <li class="register"><a href="{{route('register')}}"><i class="fa fa-sign-in">Register</i></a></li>
@@ -152,18 +139,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
-                        <li class="dropdown">
+                        <li class="">
                             <a href="{{route('pages.home')}}" class="active">Home</a>
                         </li>
                         <li>
                             <a href="{{route('category')}}">Categories</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >Courses</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{route('new-courses')}}">New Courses</a></li>
-                                <li><a href="{{route('old-courses')}}">Old Courses</a></li>
-                            </ul>
+                        <li class="">
+                            <a href="{{route('old-courses')}}">All Courses</a></li>
                         </li>
                         <li>
                             <a href="{{route('about-us')}}">About-Us</a>
@@ -224,15 +207,7 @@
                         </div>
                         <div class="col-md-6 text-right link">
                             <ul>
-                                <li>
-                                    <a href="#">Terms of user</a>
-                                </li>
-                                <li>
-                                    <a href="#">License</a>
-                                </li>
-                                <li>
-                                    <a href="#">Support</a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
