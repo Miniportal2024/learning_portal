@@ -92,10 +92,6 @@
                                                     <div id="ac1" class="panel-collapse collapse in">
                                                         <div class="panel-body" style="overflow-y: scroll; height: 450px; padding-top: 0px;">
                                                             <ul>
-                                                                @php 
-                                                                    $counter = 1;
-                                                                @endphp    
-
                                                                 @foreach($list_of_videos as $videos)
                                                                     @php
                                                                         $duration = explode(':', $videos->duration);
@@ -110,7 +106,7 @@
                                                                         
                                                                         @role('Student')
                                                                         <div class="item info">
-                                                                            <a href="{{($counter <= $level) ? '/course-video/view/'.$videos->id : 'javascript:void(0)'}}" {{($counter <= $level) ? '' : 'disabled'}} style="padding-left: 20px; padding-right: 20px;">{{($counter++ <= $level) ? 'VIEW' : 'LOCKED'}}</a>
+                                                                            <a href="{{($videos->access_number <= $level) ? '/course-video/view/'.$videos->id : 'javascript:void(0)'}}" {{($videos->access_number <= $level) ? '' : 'disabled'}} style="padding-left: 20px; padding-right: 20px;">{{($videos->access_number <= $level) ? 'VIEW' : 'LOCKED'}}</a>
                                                                         </div>
                                                                         @endrole
 
@@ -134,9 +130,10 @@
                                                                             <span>Quiz item: {{$questions}}</span>
                                                                         </div>
                                                                     </div>
+
                                                                     @role('Student')
                                                                     <div class="item info">
-                                                                        <a href="{{($counter <= $level) ? '/quiz/'.$course['id'] : 'javascript:void(0)'}}" {{($level >= $counter) ? 'disabled' : ''}} style="padding-left: 20px; padding-right: 20px;">{{($level >= $counter) ? 'VIEW' : 'LOCKED'}}</a>
+                                                                        <a href="{{($level > $max_level) ? '/quiz/'.$course['id'] : 'javascript:void(0)'}}" {{($level > $max_level) ? '' : 'disabled'}} style="padding-left: 20px; padding-right: 20px;">{{($level > $max_level) ? 'VIEW' : 'LOCKED'}}</a>
                                                                     </div>
                                                                     @endrole
 

@@ -21,26 +21,28 @@ class VideoController extends Controller
         $user_id = Auth::user()->id;
         $course = Course::find($id);
         $list_of_videos = $course->videos->sortBy('id');
+        $max_level = $list_of_videos->max('access_number');
         $video = $list_of_videos->shift();
 
         $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course->id)->get()->pluck('level');
         $level = (count($user_video) <= 0) ? 0 : $user_video->first();
         $questions = count(Quiz::where('course_id', $course->id)->get());
         $course = $course->toArray();
-        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'questions'));
+        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'max_level', 'questions'));
     }
     public function view($id){
         $user_id = Auth::user()->id;
         $video = Videos::find($id);
         $course = $video->course->first();
         $list_of_videos = $course->videos->sortBy('id');
+        $max_level = $list_of_videos->max('access_number');
         $video = $video->toArray();
         $user_video = UserVideo::where('user_id', $user_id)->where('course_id', $course->id)->get()->pluck('level');
         $level = (count($user_video) <= 0) ? 0 : $user_video->first();
         $questions = count(Quiz::where('course_id', $course->id)->get());
         $course = $course->toArray();
 
-        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'questions'));
+        return view('pages.course-video', compact('video', 'course', 'list_of_videos', 'level', 'max_level', 'questions'));
     }
     public function list(Request $request){
         $video_ids = CourseVideo::where('course_id', $request->id)->get()->pluck('video_id');
