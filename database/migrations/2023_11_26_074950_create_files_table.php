@@ -13,12 +13,18 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->BigIncrements('id');
+            $table->unsignedBigInteger('course_id');
             $table->string('title');
             $table->text('description');
             $table->string('img');
             $table->string('filepath');
             $table->string('rating')->nullable();
             $table->timestamps();
+
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade');
         });
     }
 

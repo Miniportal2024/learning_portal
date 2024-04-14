@@ -22,6 +22,9 @@
         <div class="container">
             <div class="row">
                 <div class="popular-courses-items bottom-price">
+                    @php
+                        $recent = null;
+                    @endphp
                     @foreach($courses as $course)
                     <div class="col-md-4 col-sm-6 equal-height">
                         <div class="item">
@@ -31,9 +34,20 @@
                                     <img src="{{asset('storage/'.$course->course_img)}}" alt="Thumb">
                                 </a>
                                 <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="/course-details/{{$course->id}}">
-                                        <i class="fas fa-chart-bar"></i> Learn More
-                                    </a>
+                                    @if($course->state == 'old' || $recent === null || $recent >= 60)
+                                        <a class="btn btn-theme effect btn-sm" href="/course-details/{{$course->id}}">
+                                            <i class="fas fa-chart-bar"></i> Learn More
+                                        </a>
+                                    @else
+                                        <a class="btn btn-theme effect btn-sm" href="javascript:void(0)">
+                                            <i class="fas fa-chart-bar"></i> LOCKED
+                                        </a>
+                                    @endif
+
+
+                                    @php
+                                        $recent = $course->score;
+                                    @endphp
                                 </div>
                             </div>
                             <div class="info">

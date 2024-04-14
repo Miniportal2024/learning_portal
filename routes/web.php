@@ -9,6 +9,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\FileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/course-video/view/{id}', [VideoController::class, 'view']);
     Route::get('/videos', [VideoController::class, 'read'])->name('videos');
     Route::post('/videos/update/user-video', [VideoController::class, 'update_user_video'])->name('update.user_video');
+
+    Route::get('/pdf/{id}', [FileController::class, 'showPdf']);
 
     Route::get('/developers', function () {return view('pages.developers');})->name('developers');
     Route::get('/teacher-details', function () {return view('pages.teacher-details');});

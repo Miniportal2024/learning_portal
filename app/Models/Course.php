@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Videos;
 use App\Models\Category;
+use App\Models\QuizScore;
 
 class Course extends Model
 {
@@ -18,6 +19,10 @@ class Course extends Model
     }
     public function category(){
         return $this->belongsToMany(Category::class, 'category_course', 'course_id');
+    }
+
+    public function quiz_score(){
+        return $this->hasMany(QuizScore::class);
     }
     
 }

@@ -62,12 +62,33 @@
                                     <i class="fas fa-star-half-alt"></i>
                                     <span>4.5 (16)</span>
                                 </div>
-                                <div class="align-right">
-                                    <a class="btn btn-dark effect btn-sm" href="/course-video/{{$course->id}}">
-                                        <i class="fas fa-chart-bar"></i> Study Now
-                                    </a>
-                                </div>
+                                @if(!in_array($category->id, [13, 14]))
+                                    <div class="item action">
+                                        <div class="align-right">
+                                            <a class="btn btn-dark effect btn-sm" href="/course-video/{{$course->id}}">
+                                                <i class="fas fa-chart-bar"></i> Study Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
+
+                            @if(in_array($category->id, [13, 14]))
+                                <div class="course-meta"style="margin:0 !important;">
+                                    <div class="item action" style="display: flex; flex-direction: row; align-items: flex-end; gap: 10px;">
+                                        <div class="align-right">
+                                            <a class="btn btn-dark effect btn-sm" href="/pdf/{{$course->id}}">
+                                                <i class="fas fa-chart-bar"></i> Open PDF
+                                            </a>
+                                        </div>
+                                        <div class="align-right">
+                                            <a class="btn btn-dark effect btn-sm" href="/quiz/{{$course->id}}">
+                                                <i class="fas fa-chart-bar"></i> Open Quiz
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             <!-- End Course Meta -->
                         </div>
                         <!-- End Top Info -->
