@@ -40,7 +40,7 @@
                                             <i class="fas fa-chart-bar"></i> Learn More
                                         </a>
                                     @else
-                                        <a class="btn btn-theme effect btn-sm" href="javascript:void(0)">
+                                        <a class="btn btn-theme effect btn-sm" href="javascript::void(0)">
                                             <i class="fas fa-chart-bar"></i> LOCKED
                                         </a>
                                     @endif
@@ -58,10 +58,20 @@
                                        
                                 
                                 </div>
+                                @if($count <=2 | $course->state == 'old' || $recent === null || $recent >= 60)
                                 <h4><a href="/course-details/{{$course->id}}">{{$course->name}}</a></h4>
                                 <div class="cats">
                                     <a href="#"></a>
                                 </div>
+                                
+                                @else
+                                <h4> {{$course->name}}</h4>
+                                <div class="cats">
+                                    <a href="#"></a>
+                                </div>
+
+                                @endif
+                                
                                 <p>
                                     Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
                                 </p>
