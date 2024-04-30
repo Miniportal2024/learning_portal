@@ -60,7 +60,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
-                                    <span>4.5 (16)</span>
+                                    <span>4.5 </span>
                                 </div>
                                 @if(!in_array($category->id, [13, 14]))
                                     <div class="item action">
@@ -169,10 +169,10 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star-half-alt"></i>
-                                                <span>4.5 (23,890)</span>
+                                                <span>4.5 </span>
                                             </div>
                                             <div class="meta">
-                                                <i class="fas fa-user"></i> By <a href="#">{{$course->author}}</a> 
+                                                
                                             </div>
                                         </div>
                                     </div>

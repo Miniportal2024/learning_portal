@@ -45,7 +45,7 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star-half-alt"></i>
-                                                <span>4.5 (23,890)</span>
+                                                <span>4.5</span>
                                             </div>
                                         </div>
                                     </div>
