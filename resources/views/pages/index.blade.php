@@ -146,7 +146,7 @@
                                             <h3 data-animation="animated slideInLeft">Reach you career</h3>
                                             <h1 data-animation="animated slideInUp">Learn from best offline training course</h1>
                                            
-                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -162,9 +162,9 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="content">
-                                            <h3 data-animation="animated slideInLeft">We're glade to see you</h3>
+                                            <h3 data-animation="animated slideInLeft">We're glad to see you</h3>
                                             <h1 data-animation="animated slideInUp">explore our brilliant Courses</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/img/banner/3.jpg);"></div>
+                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/img/banner/urdaneta.jpg);"></div>
                     <div class="box-table shadow dark">
                         <div class="box-cell">
                             <div class="container">
@@ -181,8 +181,8 @@
                                     <div class="col-md-8">
                                         <div class="content">
                                             <h3 data-animation="animated slideInLeft">The goal of education</h3>
-                                            <h1 data-animation="animated slideInUp">Join the bigest comunity of educators</h1>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme border btn-md" href="/courses">View Courses</a>
+                                            <h1 data-animation="animated slideInUp">Join the biggest community of educators</h1>
+                                            
                                         </div>
                                     </div>
                                 </div>

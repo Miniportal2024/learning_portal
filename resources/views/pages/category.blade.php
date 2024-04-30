@@ -28,14 +28,14 @@
                         @foreach($categories as $category)
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="category-details">
+                                    <a style="category-details">
                                         <img src="{{asset('storage/'.$category->img)}}" alt="">
                                     </a>
                                 </div>`
                                 <div class="info">
                                     <div class="author-info">
                                         <div class="thumb">
-                                            <a href="#"><img src="{{asset('storage/'.$category->img)}}" alt="Thumb"></a>
+                                            <a style="#"><img src="{{asset('storage/'.$category->img)}}" alt="Thumb"></a>
                                         </div>
                                         <div class="others">
                                             <a href="#">{{$category->instructor}}</a>

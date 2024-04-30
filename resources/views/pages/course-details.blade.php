@@ -99,7 +99,7 @@
                                 <!-- Single Tab -->
                                 <div id="tab1" class="tab-pane fade active in">
                                     <div class="info title">
-                                        <h4>Course Desscription</h4>
+                                        <h4>Course Description</h4>
                                         <p>
                                             {{$category->description}}
                                         </p>
@@ -126,14 +126,7 @@
                     <div class="sidebar">
                         <aside>
                             <!-- Sidebar Item -->
-                            <div class="sidebar-item search">
-                                <div class="sidebar-info">
-                                    <form>
-                                        <input type="text" placeholder="Course name" class="form-control">
-                                        <input type="submit" value="search">
-                                    </form>
-                                </div>
-                            </div>
+                        
                             <!-- End Sidebar Item -->
 
                             <!-- Sidebar Item -->
